@@ -2,12 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>他乡之客</title>
   
+  <subtitle>Excellence is an art won by training and habituation.</subtitle>
+  <link href="https://josephucas.github.io/project/atom.xml" rel="self"/>
   
-  <link href="http://example.com/atom.xml" rel="self"/>
-  
-  <link href="http://example.com/"/>
+  <link href="https://josephucas.github.io/project/"/>
   <updated>2021-12-29T08:22:58.368Z</updated>
-  <id>http://example.com/</id>
+  <id>https://josephucas.github.io/project/</id>
   
   <author>
     <name>Joseph Smith</name>
@@ -18,49 +18,46 @@
   
   <entry>
     <title>hello</title>
-    <link href="http://example.com/2021/12/29/hello/"/>
-    <id>http://example.com/2021/12/29/hello/</id>
+    <link href="https://josephucas.github.io/project/2021/12/29/hello/"/>
+    <id>https://josephucas.github.io/project/2021/12/29/hello/</id>
     <published>2021-12-29T01:51:52.000Z</published>
     <updated>2021-12-29T08:22:58.368Z</updated>
     
     
     
     
-    <category term="web前端" scheme="http://example.com/categories/web%E5%89%8D%E7%AB%AF/"/>
+    <category term="web前端" scheme="https://josephucas.github.io/project/categories/web%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="hello" scheme="http://example.com/tags/hello/"/>
+    <category term="hello" scheme="https://josephucas.github.io/project/tags/hello/"/>
     
   </entry>
   
   <entry>
     <title>my-first-blog</title>
-    <link href="http://example.com/2021/12/28/my-first-blog/"/>
-    <id>http://example.com/2021/12/28/my-first-blog/</id>
+    <link href="https://josephucas.github.io/project/2021/12/28/my-first-blog/"/>
+    <id>https://josephucas.github.io/project/2021/12/28/my-first-blog/</id>
     <published>2021-12-28T10:23:03.000Z</published>
-    <updated>2021-12-29T08:22:17.963Z</updated>
+    <updated>2021-12-29T09:03:07.344Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h2><h3 id="本地预览和同时发布到远程的浏览结果不一致"><a href="#本地预览和同时发布到远程的浏览结果不一致" class="headerlink" title="本地预览和同时发布到远程的浏览结果不一致"></a>本地预览和同时发布到远程的浏览结果不一致</h3><p>这是由缓存造成的,需要先hexo clean,再hexo g -d部署到远程</p><h2 id="实现文章首页”分类于”、”阅读次数”等效果"><a href="#实现文章首页”分类于”、”阅读次数”等效果" class="headerlink" title="实现文章首页”分类于”、”阅读次数”等效果"></a>实现文章首页”分类于”、”阅读次数”等效果</h2><p>在根目录下打开命令行<br>依次输入以下命令:</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h2><span id="more"></span><h3 id="本地预览和同时发布到远程的浏览结果不一致"><a href="#本地预览和同时发布到远程的浏览结果不一致" class="headerlink" title="本地预览和同时发布到远程的浏览结果不一致"></a>本地预览和同时发布到远程的浏览结果不一致</h3><p>这是由缓存造成的,需要先hexo clean,再hexo g -d部署到远程</p><h2 id="实现文章首页”分类于”、”阅读次数”等效果"><a href="#实现文章首页”分类于”、”阅读次数”等效果" class="headerlink" title="实现文章首页”分类于”、”阅读次数”等效果"></a>实现文章首页”分类于”、”阅读次数”等效果</h2><p>在根目录下打开命令行<br>依次输入以下命令:</p>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;h2 id=&quot;常见错误&quot;&gt;&lt;a href=&quot;#常见错误&quot; class=&quot;headerlink&quot; title=&quot;常见错误&quot;&gt;&lt;/a&gt;常见错误&lt;/h2&gt;&lt;h3 id=&quot;本地预览和同时发布到远程的浏览结果不一致&quot;&gt;&lt;a href=&quot;#本地预览和同时发布到远程的浏览结果不一致&quot; cla</summary>
-      
+    <summary type="html">&lt;h2 id=&quot;常见错误&quot;&gt;&lt;a href=&quot;#常见错误&quot; class=&quot;headerlink&quot; title=&quot;常见错误&quot;&gt;&lt;/a&gt;常见错误&lt;/h2&gt;</summary>
     
     
     
-    <category term="区块链" scheme="http://example.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    <category term="区块链" scheme="https://josephucas.github.io/project/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
     
-    <category term="hello" scheme="http://example.com/tags/hello/"/>
+    <category term="hello" scheme="https://josephucas.github.io/project/tags/hello/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2021/12/28/hello-world/"/>
-    <id>http://example.com/2021/12/28/hello-world/</id>
+    <link href="https://josephucas.github.io/project/2021/12/28/hello-world/"/>
+    <id>https://josephucas.github.io/project/2021/12/28/hello-world/</id>
     <published>2021-12-28T10:19:17.453Z</published>
     <updated>2021-12-29T08:23:27.432Z</updated>
     
@@ -74,10 +71,10 @@
     
     
     
-    <category term="区块链" scheme="http://example.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    <category term="区块链" scheme="https://josephucas.github.io/project/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
     
-    <category term="hello" scheme="http://example.com/tags/hello/"/>
+    <category term="hello" scheme="https://josephucas.github.io/project/tags/hello/"/>
     
   </entry>
   

@@ -3,11 +3,11 @@
   <title>他乡之客</title>
   
   <subtitle>Excellence is an art won by training and habituation.</subtitle>
-  <link href="https://josephucas.github.io/project/atom.xml" rel="self"/>
+  <link href="http://example.com/atom.xml" rel="self"/>
   
-  <link href="https://josephucas.github.io/project/"/>
+  <link href="http://example.com/"/>
   <updated>2021-12-29T08:22:58.368Z</updated>
-  <id>https://josephucas.github.io/project/</id>
+  <id>http://example.com/</id>
   
   <author>
     <name>Joseph Smith</name>
@@ -18,25 +18,25 @@
   
   <entry>
     <title>hello</title>
-    <link href="https://josephucas.github.io/project/2021/12/29/hello/"/>
-    <id>https://josephucas.github.io/project/2021/12/29/hello/</id>
+    <link href="http://example.com/2021/12/29/hello/"/>
+    <id>http://example.com/2021/12/29/hello/</id>
     <published>2021-12-29T01:51:52.000Z</published>
     <updated>2021-12-29T08:22:58.368Z</updated>
     
     
     
     
-    <category term="web前端" scheme="https://josephucas.github.io/project/categories/web%E5%89%8D%E7%AB%AF/"/>
+    <category term="web前端" scheme="http://example.com/categories/web%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="hello" scheme="https://josephucas.github.io/project/tags/hello/"/>
+    <category term="hello" scheme="http://example.com/tags/hello/"/>
     
   </entry>
   
   <entry>
     <title>my-first-blog</title>
-    <link href="https://josephucas.github.io/project/2021/12/28/my-first-blog/"/>
-    <id>https://josephucas.github.io/project/2021/12/28/my-first-blog/</id>
+    <link href="http://example.com/2021/12/28/my-first-blog/"/>
+    <id>http://example.com/2021/12/28/my-first-blog/</id>
     <published>2021-12-28T10:23:03.000Z</published>
     <updated>2021-12-29T09:03:07.344Z</updated>
     
@@ -47,17 +47,17 @@
     
     
     
-    <category term="区块链" scheme="https://josephucas.github.io/project/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    <category term="区块链" scheme="http://example.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
     
-    <category term="hello" scheme="https://josephucas.github.io/project/tags/hello/"/>
+    <category term="hello" scheme="http://example.com/tags/hello/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://josephucas.github.io/project/2021/12/28/hello-world/"/>
-    <id>https://josephucas.github.io/project/2021/12/28/hello-world/</id>
+    <link href="http://example.com/2021/12/28/hello-world/"/>
+    <id>http://example.com/2021/12/28/hello-world/</id>
     <published>2021-12-28T10:19:17.453Z</published>
     <updated>2021-12-29T08:23:27.432Z</updated>
     
@@ -71,10 +71,10 @@
     
     
     
-    <category term="区块链" scheme="https://josephucas.github.io/project/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    <category term="区块链" scheme="http://example.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
     
-    <category term="hello" scheme="https://josephucas.github.io/project/tags/hello/"/>
+    <category term="hello" scheme="http://example.com/tags/hello/"/>
     
   </entry>
   

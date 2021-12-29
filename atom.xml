@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-12-29T08:22:58.368Z</updated>
+  <updated>2021-12-29T10:30:18.543Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2021/12/29/hello/"/>
     <id>http://example.com/2021/12/29/hello/</id>
     <published>2021-12-29T01:51:52.000Z</published>
-    <updated>2021-12-29T08:22:58.368Z</updated>
+    <updated>2021-12-29T10:30:18.543Z</updated>
     
     
     
@@ -38,7 +38,7 @@
     <link href="http://example.com/2021/12/28/my-first-blog/"/>
     <id>http://example.com/2021/12/28/my-first-blog/</id>
     <published>2021-12-28T10:23:03.000Z</published>
-    <updated>2021-12-29T09:03:07.344Z</updated>
+    <updated>2021-12-29T10:30:18.544Z</updated>
     
     <content type="html"><![CDATA[<h2 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h2><span id="more"></span><h3 id="本地预览和同时发布到远程的浏览结果不一致"><a href="#本地预览和同时发布到远程的浏览结果不一致" class="headerlink" title="本地预览和同时发布到远程的浏览结果不一致"></a>本地预览和同时发布到远程的浏览结果不一致</h3><p>这是由缓存造成的,需要先hexo clean,再hexo g -d部署到远程</p><h2 id="实现文章首页”分类于”、”阅读次数”等效果"><a href="#实现文章首页”分类于”、”阅读次数”等效果" class="headerlink" title="实现文章首页”分类于”、”阅读次数”等效果"></a>实现文章首页”分类于”、”阅读次数”等效果</h2><p>在根目录下打开命令行<br>依次输入以下命令:</p>]]></content>
     
@@ -59,7 +59,7 @@
     <link href="http://example.com/2021/12/28/hello-world/"/>
     <id>http://example.com/2021/12/28/hello-world/</id>
     <published>2021-12-28T10:19:17.453Z</published>
-    <updated>2021-12-29T08:23:27.432Z</updated>
+    <updated>2021-12-29T10:30:18.541Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     

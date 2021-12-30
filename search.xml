@@ -4,6 +4,70 @@
   
     
     <entry>
+      <title>PoRX: A reputation incentive scheme for blockchain consensus of IIoT</title>
+      <link href="/2021/12/30/PoRX-A-reputation-incentive-scheme-for-blockchain-consensus-of-IIoT/"/>
+      <url>/2021/12/30/PoRX-A-reputation-incentive-scheme-for-blockchain-consensus-of-IIoT/</url>
+      
+        <content type="html"><![CDATA[<p>[TOC]</p><h1 align="center">这是居中标题</h1><p align="right">PoRX: IIoT区块链共识的声誉激励方案</p> <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><span id="more"></span><h2 id="研究问题"><a href="#研究问题" class="headerlink" title="研究问题"></a>研究问题</h2><h3 id="研究背景-简要介绍"><a href="#研究背景-简要介绍" class="headerlink" title="研究背景(简要介绍)"></a>研究背景(简要介绍)</h3><h3 id="研究问题或解决技术问题描述（需定位和描述清晰）"><a href="#研究问题或解决技术问题描述（需定位和描述清晰）" class="headerlink" title="研究问题或解决技术问题描述（需定位和描述清晰）"></a>研究问题或解决技术问题描述（需定位和描述清晰）</h3><h2 id="研究现状"><a href="#研究现状" class="headerlink" title="研究现状"></a>研究现状</h2><h3 id="围绕研究问题，进行相关研究成果列举（注明参考文献）"><a href="#围绕研究问题，进行相关研究成果列举（注明参考文献）" class="headerlink" title="围绕研究问题，进行相关研究成果列举（注明参考文献）"></a>围绕研究问题，进行相关研究成果列举（注明参考文献）</h3><h3 id="研究现状总结，及现有研究仍然存在不足或问题"><a href="#研究现状总结，及现有研究仍然存在不足或问题" class="headerlink" title="研究现状总结，及现有研究仍然存在不足或问题"></a>研究现状总结，及现有研究仍然存在不足或问题</h3><h2 id="思路特色"><a href="#思路特色" class="headerlink" title="思路特色"></a>思路特色</h2><h3 id="与现有研究（技术手段）不同之处"><a href="#与现有研究（技术手段）不同之处" class="headerlink" title="与现有研究（技术手段）不同之处"></a>与现有研究（技术手段）不同之处</h3><h2 id="关键问题-技术点"><a href="#关键问题-技术点" class="headerlink" title="关键问题/技术点"></a>关键问题/技术点</h2><h3 id="围绕研究题目，提炼出需要解决的几个关键问题点-技术点"><a href="#围绕研究题目，提炼出需要解决的几个关键问题点-技术点" class="headerlink" title="围绕研究题目，提炼出需要解决的几个关键问题点/技术点"></a>围绕研究题目，提炼出需要解决的几个关键问题点/技术点</h3><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="总体解决方案（最好能画一个总体方案图、或有一段描述清楚总体思路）"><a href="#总体解决方案（最好能画一个总体方案图、或有一段描述清楚总体思路）" class="headerlink" title="总体解决方案（最好能画一个总体方案图、或有一段描述清楚总体思路）"></a>总体解决方案（最好能画一个总体方案图、或有一段描述清楚总体思路）</h3><h3 id="每个问题点-技术点分别的解决方案或模型设计"><a href="#每个问题点-技术点分别的解决方案或模型设计" class="headerlink" title="每个问题点/技术点分别的解决方案或模型设计"></a>每个问题点/技术点分别的解决方案或模型设计</h3><h2 id="实验设计-amp-结果分析"><a href="#实验设计-amp-结果分析" class="headerlink" title="实验设计&amp;结果分析"></a>实验设计&amp;结果分析</h2><h3 id="场景选择、实验设计、指标选取"><a href="#场景选择、实验设计、指标选取" class="headerlink" title="场景选择、实验设计、指标选取"></a>场景选择、实验设计、指标选取</h3><h3 id="实验结果分析"><a href="#实验结果分析" class="headerlink" title="实验结果分析"></a>实验结果分析</h3><h2 id="论文结论"><a href="#论文结论" class="headerlink" title="论文结论"></a>论文结论</h2><h3 id="得出文章结论"><a href="#得出文章结论" class="headerlink" title="得出文章结论"></a>得出文章结论</h3>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo使用记录</title>
+      <link href="/2021/12/29/hexo%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/"/>
+      <url>/2021/12/29/hexo%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="hexo使用记录"><a href="#hexo使用记录" class="headerlink" title="hexo使用记录"></a>hexo使用记录</h1><p align="right">副标题</p> <center>要居中的文字</center><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="hexo删除文章"><a href="#hexo删除文章" class="headerlink" title="hexo删除文章"></a>hexo删除文章</h2><p>目前未找到删除文章的指令，可以到目录/source/_posts下删除相应的文章，然后重新生成部署即可</p><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#到目录/source/_posts下删除相应的文章</span></span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></tbody></table></figure><h2 id="hexo生成文章"><a href="#hexo生成文章" class="headerlink" title="hexo生成文章"></a>hexo生成文章</h2><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></tbody></table></figure><p>您可以在命令中指定文章的布局（layout），默认为 <code>post</code>，可以通过修改 <code>_config.yml</code> 中的 <code>default_layout</code> 参数来指定默认布局。</p><p>Hexo 有三种默认布局：<code>post</code>、<code>page</code> 和 <code>draft</code>。在创建这三种不同类型的文件时，它们将会被保存到不同的路径；而您自定义的其他布局和 <code>post</code> 相同，都将储存到 <code>source/_posts</code> 文件夹。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> blog工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 杂项 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>期刊投稿收集</title>
+      <link href="/2021/12/29/%E6%9C%9F%E5%88%8A%E6%8A%95%E7%A8%BF%E6%94%B6%E9%9B%86/"/>
+      <url>/2021/12/29/%E6%9C%9F%E5%88%8A%E6%8A%95%E7%A8%BF%E6%94%B6%E9%9B%86/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>声誉机制</title>
+      <link href="/2021/12/29/%E5%A3%B0%E8%AA%89%E6%9C%BA%E5%88%B6/"/>
+      <url>/2021/12/29/%E5%A3%B0%E8%AA%89%E6%9C%BA%E5%88%B6/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hello</title>
       <link href="/2021/12/29/hello/"/>
       <url>/2021/12/29/hello/</url>

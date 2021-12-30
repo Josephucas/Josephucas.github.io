@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":"ture","show_result":"ture","style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"ture","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":"ture","show_result":"ture","style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"ture","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="hexo使用记录">
@@ -28,7 +28,7 @@
 <meta property="og:description" content="hexo使用记录">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-29T12:35:25.000Z">
-<meta property="article:modified_time" content="2021-12-30T02:48:59.951Z">
+<meta property="article:modified_time" content="2021-12-30T10:22:04.545Z">
 <meta property="article:author" content="Joseph Smith">
 <meta property="article:tag" content="杂项">
 <meta name="twitter:card" content="summary">
@@ -77,7 +77,11 @@
   </style>
 </noscript>
 
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end -->
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="他乡之客" type="application/atom+xml">
 </head>
@@ -230,7 +234,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-30 10:48:59" itemprop="dateModified" datetime="2021-12-30T10:48:59+08:00">2021-12-30</time>
+                <time title="修改时间：2021-12-30 18:22:04" itemprop="dateModified" datetime="2021-12-30T18:22:04+08:00">2021-12-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -248,14 +252,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>467</span>
+              <span>4.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -268,30 +272,138 @@
 
       
         <p align="right">hexo使用记录</p> 
-
 <span id="more"></span>
-
-<h2 id="hexo删除文章"><a href="#hexo删除文章" class="headerlink" title="hexo删除文章"></a>hexo删除文章</h2><p>目前未找到删除文章的指令，可以到目录/source/_posts下删除相应的文章，然后重新生成部署即可</p>
+<h2 id="hexo删除文章"><a class="markdownIt-Anchor" href="#hexo删除文章"></a> hexo删除文章</h2>
+<p>目前未找到删除文章的指令，可以到目录/source/_posts下删除相应的文章，然后重新生成部署即可</p>
 <figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#到目录/source/_posts下删除相应的文章</span></span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></tbody></table></figure>
-
-
-
-<h2 id="hexo生成文章"><a href="#hexo生成文章" class="headerlink" title="hexo生成文章"></a>hexo生成文章</h2><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></tbody></table></figure>
-
+<h2 id="hexo生成文章"><a class="markdownIt-Anchor" href="#hexo生成文章"></a> hexo生成文章</h2>
+<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></tbody></table></figure>
 <p>您可以在命令中指定文章的布局（layout），默认为 <code>post</code>，可以通过修改 <code>_config.yml</code> 中的 <code>default_layout</code> 参数来指定默认布局。</p>
 <p>Hexo 有三种默认布局：<code>post</code>、<code>page</code> 和 <code>draft</code>。在创建这三种不同类型的文件时，它们将会被保存到不同的路径；而您自定义的其他布局和 <code>post</code> 相同，都将储存到 <code>source/_posts</code> 文件夹。</p>
 <figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span>要居中的文字<span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
-
-
-
-<h2 id="html标题"><a href="#html标题" class="headerlink" title="html标题"></a>html标题</h2><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">align</span> = <span class="string">"center"</span>&gt;</span>hexo入门<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
-
-
-
-<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><ol>
+<h2 id="html标题"><a class="markdownIt-Anchor" href="#html标题"></a> html标题</h2>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">align</span> = <span class="string">"center"</span>&gt;</span>hexo入门<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="hexo部署"><a class="markdownIt-Anchor" href="#hexo部署"></a> hexo部署</h2>
+<ol>
 <li>本地预览和同时发布到远程的浏览结果不一致</li>
 </ol>
 <p>这是由缓存造成的,需要先hexo clean,再hexo g -d部署到远程</p>
+<h2 id="hexo代码块高亮"><a class="markdownIt-Anchor" href="#hexo代码块高亮"></a> hexo代码块高亮</h2>
+<p>首先需要动的地方有：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">主题的_config.yml文件</span><br><span class="line">站点的_config.yml文件</span><br><span class="line">代码块的语言标注</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="站点配置文件"><a class="markdownIt-Anchor" href="#站点配置文件"></a> 站点配置文件</h3>
+<p>在站点的配置文件中，搜索hightlight:</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">highlight:</span><br><span class="line">  enable: true</span><br><span class="line">  line_number: true</span><br><span class="line">  auto_detect: true</span><br><span class="line">  tab_replace:</span><br></pre></td></tr></tbody></table></figure>
+<p>文字自动检测默认不启动，所以改成true使其起作用。</p>
+<h3 id="主题配置文件"><a class="markdownIt-Anchor" href="#主题配置文件"></a> 主题配置文件</h3>
+<p>再到主题的配置文件：</p>
+<p>找到：</p>
+<p>highlight_theme: normal，注释显示有五种显示主题可用，分别是：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">normal</span><br><span class="line">night</span><br><span class="line">night eighties</span><br><span class="line">night blue</span><br><span class="line">night bright</span><br></pre></td></tr></tbody></table></figure>
+<p>选择的是night bright</p>
+<p>还可以选择mac风格</p>
+<p><code>_config.yml</code> 配置一下 codeblock.copy_button.style: mac</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://benpaodewoniu.github.io/2019/10/06/hexo7/">hexo next 代码块高亮</a></p>
+<p><a target="_blank" rel="noopener" href="https://miaosakurai.com/2020/04/20/Hexo-NexT%E7%BE%8E%E5%8C%96%F0%9F%8D%95Mac-Panel%E9%A3%8E%E6%A0%BC%E4%BB%A3%E7%A0%81%E5%9D%97%E9%85%8D%E7%BD%AE/">Hexo+NexT美化🍕Mac Panel风格代码块配置</a></p>
+</blockquote>
+<h2 id="配置markdown渲染器"><a class="markdownIt-Anchor" href="#配置markdown渲染器"></a> 配置markdown渲染器</h2>
+<p>主要是为了数学公式，</p>
+<p>Next 主题可以使用 mathjax 和 katex 两种渲染 latex 的方式。</p>
+<ul>
+<li>katex 渲染速度更快，但仅支持 latex 的子集。</li>
+<li>mathjax 渲染速度稍慢，但对 latex 的支持较好。</li>
+</ul>
+<p>Next 主题的配置文件 _config.yml 中：</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Math Formulas Render Support</span></span><br><span class="line"><span class="attr">math:</span></span><br><span class="line">  <span class="comment"># Default (true) will load mathjax / katex script on demand.</span></span><br><span class="line">  <span class="comment"># That is it only render those page which has `mathjax: true` in Front-matter.</span></span><br><span class="line">  <span class="comment"># If you set it to false, it will load mathjax / katex srcipt EVERY PAGE.</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># hexo-renderer-pandoc (or hexo-renderer-kramed) required for full MathJax support.</span></span><br><span class="line">  <span class="attr">mathjax:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># See: https://mhchem.github.io/MathJax-mhchem/</span></span><br><span class="line">    <span class="attr">mhchem:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin) required for full Katex support.</span></span><br><span class="line">  <span class="attr">katex:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">    <span class="comment"># See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex</span></span><br><span class="line">    <span class="attr">copy_tex:</span> <span class="literal">false</span></span><br></pre></td></tr></tbody></table></figure>
+<p>mathjax 和 katex 是互斥的两个选项，enable 不能同时 true或 false。</p>
+<p>如果设置 <code>mathjax : true</code> ，就需要更换渲染引擎， <code>hexo-renderer-pandoc</code> 或 <code>hexo-renderer-kramed</code>（这个不推荐）</p>
+<p>hexo-renderer-marked：hexo默认的渲染器不支持复杂的数学公式<br>
+hexo-renderer-kramed：支持复杂的数学公式，mathjax的渲染方式<br>
+hexo-renderer-markdown-it：取代第一个的渲染器，渲染更快，更符合CommonMark规则。<br>
+hexo-renderer-markdown-it-katex：跟上一个差不多，但是不用设置就支持katex<br>
+hexo-renderer-markdown-it-plus：好用，可以自己决定是否要渲染katex公式。此外能渲染的东西多，但是已经不维护了。<br>
+@upupming/hexo-renderer-markdown-it-plus ：上一个的升级版。好用。支持的功能多</p>
+<p>虽然next不推荐katlex这里选用的是katex</p>
+<p>步骤：</p>
+<ol>
+<li>
+<p>更换渲染器</p>
+<ol>
+<li>
+<p>卸载原来的<br>
+如果你没换过hexo的渲染器，那你就这样卸载：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uni hexo-renderer-marked --save</span><br></pre></td></tr></tbody></table></figure>
+<p>如果你换过了，那你就想想你用的是什么渲染器，然后卸载</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uni 你的渲染器 --save</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li>
+<p>下载新的渲染器</p>
+</li>
+</ol>
+	<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">   npm i @upupming/hexo-renderer-markdown-it-plus --save</span><br><span class="line"></span><br><span class="line">2. 修改 _config.yml文件</span><br><span class="line"></span><br><span class="line">   1. 介绍文件</span><br><span class="line">      先一下完整代码，把这段代码完整的放到你博客的 _config.yml里边。下边详细解释一下每行代表什么。</span><br><span class="line"></span><br><span class="line">      ```yaml</span><br><span class="line">      <span class="comment"># Markdown config</span></span><br><span class="line">      markdown_it_plus:</span><br><span class="line">        render:</span><br><span class="line">          html: <span class="literal">true</span>						</span><br><span class="line">          xhtmlOut: <span class="literal">false</span></span><br><span class="line">          breaks: <span class="literal">true</span></span><br><span class="line">          linkify: <span class="literal">true</span></span><br><span class="line">          typographer: <span class="literal">true</span></span><br><span class="line">          quotes: <span class="string">'“”‘’'</span></span><br><span class="line">        plugins:</span><br><span class="line">        anchors:	</span><br><span class="line">          level: 2</span><br><span class="line">          collisionSuffix: <span class="string">'v'</span></span><br><span class="line">          permalink: <span class="literal">true</span></span><br><span class="line">          permalinkClass: header-anchor</span><br><span class="line">          permalinkSide: <span class="string">'left'</span></span><br><span class="line">          permalinkSymbol: ¶</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>render<br>
+html：<br>
+true 支持HTML内嵌<br>
+xhtmlOut：<br>
+true 解析器markdown为完全符合XHTML的代码。例如：一个换行符将是<br>，否则会转换为<br><br>
+breaks：<br>
+true 每当.md文件的换行符都会解析器都会生成<br>标签。<br>
+其实讲真的这个设置true还是false，我页面上没看出区别。<br>
+linkify：<br>
+true 返回文本链接作为与段落内联的适当链接。例如，如果你写的一段文本看起来像一个链接，它将被呈现为<a src="http://example.com">http://example.com</a>，否则会解析为文本，比如<span><a href="http://example.com">http://example.com</a></span><br>
+typographer：替换常见的排版元素。<br>
+quotes：在 typographer为true的时候才好使，用于替换英文单双引号。<br>
+如果quotes：’“”‘’’ 那么"hello" ‘hello’会变成“hello” ‘hello’<br>
+如果quotes：’«»“”'那么"hello" 'hello’会变成«hello» “hello”<br>
+我用着不好使</p>
+</blockquote>
+<p>plugins</p>
+<p>添加插件，这就是我为什么选了这个渲染器，这个默认支持的比较多，不用自己下载。<br>
+markdown   markdown-it-toc-and-anchor支持@[toc]生成目录<br>
+anchors: 这个按照我上边的默认值写就行</p>
+   <figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Minimum level for ID creation. (Ex. h2 to h6)</span></span><br><span class="line"><span class="attr">level:</span> <span class="number">2</span></span><br><span class="line"><span class="comment"># A suffix that is prepended to the number given if the ID is repeated.</span></span><br><span class="line"><span class="attr">collisionSuffix:</span> <span class="string">''</span>           </span><br><span class="line"><span class="comment"># If `true`, creates an anchor tag with a permalink besides the heading.</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="literal">false</span>              </span><br><span class="line"><span class="comment"># Class used for the permalink anchor tag.</span></span><br><span class="line"><span class="attr">permalinkClass:</span> <span class="string">header-anchor</span></span><br><span class="line"><span class="comment"># Set to 'right' to add permalink after heading</span></span><br><span class="line"><span class="attr">permalinkSide:</span> <span class="string">'left'</span></span><br><span class="line"><span class="comment"># The symbol used to make the permalink</span></span><br><span class="line"><span class="attr">permalinkSymbol:</span> <span class="string">¶</span></span><br><span class="line"><span class="comment"># Transform anchor to (1) lower case; (2) upper case</span></span><br><span class="line"><span class="attr">case:</span> <span class="number">0</span></span><br><span class="line"><span class="comment"># Replace space with a character</span></span><br><span class="line"><span class="attr">separator:</span> <span class="string">'-'</span></span><br></pre></td></tr></tbody></table></figure>
+<ol start="2">
+<li>
+<p>修改文件</p>
+<p>添加插件你可以</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">plugins:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">markdown-it-sub</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">markdown-it-sup</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">...</span></span><br></pre></td></tr></tbody></table></figure>
+<p>也可以</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">plugins:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">plugin:</span></span><br><span class="line">	 <span class="attr">name:</span> <span class="string">markdown-it-sub</span></span><br><span class="line">	 <span class="attr">enable:</span> <span class="literal">false</span>	<span class="comment">#false就是不开启这个插件</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">plugin:</span></span><br><span class="line">	 <span class="attr">name:</span> <span class="string">markdown-it-sup</span></span><br><span class="line">	 <span class="attr">enable:</span> <span class="literal">false</span>	<span class="comment">#false就是不开启这个插件</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">...</span></span><br><span class="line">      </span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">plugins:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">markdown-it-sub</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">markdown-it-sup</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">markdown-it-footnote</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">markdown-it-ins</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">markdown-it-mark</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">markdown-it-katex</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">markdown-it-toc-and-anchor</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li>
+<p>增加插件<br>
+如果你想用其他的插件，你可以自己下载<br>
+<code>npm install markdown-it-... --save</code></p>
+</li>
+</ol>
+</li>
+</ol>
+<p>支持katex公式</p>
+<ol>
+<li>修改_config.yml的 plugins，增加katex插件</li>
+</ol>
+<p>plugins:</p>
+<ul>
+<li>markdown-it-katex</li>
+</ul>
+<ol start="2">
+<li>
+<p>给你主题的中引入一个css，一般路径主题/source/css，找到对应的文件，加上https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css</p>
+</li>
+<li>
+<p>这个地方是在next的_config.yml里面填写的</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">katex:</span><br><span class="line">copy_tex_js:</span><br><span class="line">copy_tex_css: https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ol>
+<p>最后一定要记得<code>hexo clean</code> 之后再<code>hexo g</code> <code>hexo s</code></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36667170/article/details/105846999">hexo markdown渲染器 @upupming/hexo-renderer-markdown-it-plus</a></p>
+<p><a target="_blank" rel="noopener" href="https://roro4ever.github.io/2019/12/01/hexo-Next%E4%B8%BB%E9%A2%98%E6%B8%B2%E6%9F%93-latex-%E5%85%AC%E5%BC%8F%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95/hexo-next%E4%B8%BB%E9%A2%98%E6%B8%B2%E6%9F%93-latex-%E5%85%AC%E5%BC%8F%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95/">Hexo Next主题渲染 Latex 公式的配置方法</a></p>
+<p><a target="_blank" rel="noopener" href="https://dog.wtf/tech/making-hexo-next-theme-latex-math-equation-supported/">让 Hexo Next (v8.0.0) 支持 LaTeX 数学公式</a></p>
+</blockquote>
 
     </div>
 
@@ -309,7 +421,10 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/12/29/%E6%9C%9F%E5%88%8A%E6%8A%95%E7%A8%BF%E6%94%B6%E9%9B%86/" rel="prev" title="期刊投稿收集">
+      <i class="fa fa-chevron-left"></i> 期刊投稿收集
+    </a></div>
       <div class="post-nav-item">
     <a href="/2021/12/30/PoRX-A-reputation-incentive-scheme-for-blockchain-consensus-of-IIoT/" rel="next" title="PoRX: A reputation incentive scheme for blockchain consensus of IIoT">
       PoRX: A reputation incentive scheme for blockchain consensus of IIoT <i class="fa fa-chevron-right"></i>
@@ -372,7 +487,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo%E5%88%A0%E9%99%A4%E6%96%87%E7%AB%A0"><span class="nav-number">1.</span> <span class="nav-text">hexo删除文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo%E7%94%9F%E6%88%90%E6%96%87%E7%AB%A0"><span class="nav-number">2.</span> <span class="nav-text">hexo生成文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#html%E6%A0%87%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">html标题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">其他问题</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo%E5%88%A0%E9%99%A4%E6%96%87%E7%AB%A0"><span class="nav-number">1.</span> <span class="nav-text"> hexo删除文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo%E7%94%9F%E6%88%90%E6%96%87%E7%AB%A0"><span class="nav-number">2.</span> <span class="nav-text"> hexo生成文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#html%E6%A0%87%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text"> html标题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo%E9%83%A8%E7%BD%B2"><span class="nav-number">4.</span> <span class="nav-text"> hexo部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo%E4%BB%A3%E7%A0%81%E5%9D%97%E9%AB%98%E4%BA%AE"><span class="nav-number">5.</span> <span class="nav-text"> hexo代码块高亮</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">5.1.</span> <span class="nav-text"> 站点配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">5.2.</span> <span class="nav-text"> 主题配置文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEmarkdown%E6%B8%B2%E6%9F%93%E5%99%A8"><span class="nav-number">6.</span> <span class="nav-text"> 配置markdown渲染器</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -388,20 +503,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -446,12 +561,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">3k</span>
+    <span title="站点总字数">9k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3 分钟</span>
+    <span title="站点阅读时长">8 分钟</span>
 </div>
 
         
@@ -566,6 +681,8 @@ window.addEventListener('pjax:success', () => {
 
 
     <div id="pjax">
+  
+
   
 
   

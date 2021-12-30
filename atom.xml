@@ -38,7 +38,7 @@
     <link href="http://example.com/2021/12/30/PoRX-A-reputation-incentive-scheme-for-blockchain-consensus-of-IIoT/"/>
     <id>http://example.com/2021/12/30/PoRX-A-reputation-incentive-scheme-for-blockchain-consensus-of-IIoT/</id>
     <published>2021-12-30T02:38:31.000Z</published>
-    <updated>2021-12-30T03:32:36.728Z</updated>
+    <updated>2021-12-30T06:24:27.185Z</updated>
     
     <content type="html"><![CDATA[<p align="right">PoRX: IIoT区块链共识的声誉激励方案</p> <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><span id="more"></span><h2 id="研究问题"><a href="#研究问题" class="headerlink" title="研究问题"></a>研究问题</h2><h3 id="研究背景-简要介绍"><a href="#研究背景-简要介绍" class="headerlink" title="研究背景(简要介绍)"></a>研究背景(简要介绍)</h3><h3 id="研究问题或解决技术问题描述（需定位和描述清晰）"><a href="#研究问题或解决技术问题描述（需定位和描述清晰）" class="headerlink" title="研究问题或解决技术问题描述（需定位和描述清晰）"></a>研究问题或解决技术问题描述（需定位和描述清晰）</h3><h2 id="研究现状"><a href="#研究现状" class="headerlink" title="研究现状"></a>研究现状</h2><h3 id="围绕研究问题，进行相关研究成果列举（注明参考文献）"><a href="#围绕研究问题，进行相关研究成果列举（注明参考文献）" class="headerlink" title="围绕研究问题，进行相关研究成果列举（注明参考文献）"></a>围绕研究问题，进行相关研究成果列举（注明参考文献）</h3><h3 id="研究现状总结，及现有研究仍然存在不足或问题"><a href="#研究现状总结，及现有研究仍然存在不足或问题" class="headerlink" title="研究现状总结，及现有研究仍然存在不足或问题"></a>研究现状总结，及现有研究仍然存在不足或问题</h3><h2 id="思路特色"><a href="#思路特色" class="headerlink" title="思路特色"></a>思路特色</h2><h3 id="与现有研究（技术手段）不同之处"><a href="#与现有研究（技术手段）不同之处" class="headerlink" title="与现有研究（技术手段）不同之处"></a>与现有研究（技术手段）不同之处</h3><h2 id="关键问题-技术点"><a href="#关键问题-技术点" class="headerlink" title="关键问题/技术点"></a>关键问题/技术点</h2><h3 id="围绕研究题目，提炼出需要解决的几个关键问题点-技术点"><a href="#围绕研究题目，提炼出需要解决的几个关键问题点-技术点" class="headerlink" title="围绕研究题目，提炼出需要解决的几个关键问题点/技术点"></a>围绕研究题目，提炼出需要解决的几个关键问题点/技术点</h3><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="总体解决方案（最好能画一个总体方案图、或有一段描述清楚总体思路）"><a href="#总体解决方案（最好能画一个总体方案图、或有一段描述清楚总体思路）" class="headerlink" title="总体解决方案（最好能画一个总体方案图、或有一段描述清楚总体思路）"></a>总体解决方案（最好能画一个总体方案图、或有一段描述清楚总体思路）</h3><h3 id="每个问题点-技术点分别的解决方案或模型设计"><a href="#每个问题点-技术点分别的解决方案或模型设计" class="headerlink" title="每个问题点/技术点分别的解决方案或模型设计"></a>每个问题点/技术点分别的解决方案或模型设计</h3><h2 id="实验设计-amp-结果分析"><a href="#实验设计-amp-结果分析" class="headerlink" title="实验设计&amp;结果分析"></a>实验设计&amp;结果分析</h2><h3 id="场景选择、实验设计、指标选取"><a href="#场景选择、实验设计、指标选取" class="headerlink" title="场景选择、实验设计、指标选取"></a>场景选择、实验设计、指标选取</h3><h3 id="实验结果分析"><a href="#实验结果分析" class="headerlink" title="实验结果分析"></a>实验结果分析</h3><h2 id="论文结论"><a href="#论文结论" class="headerlink" title="论文结论"></a>论文结论</h2><h3 id="得出文章结论"><a href="#得出文章结论" class="headerlink" title="得出文章结论"></a>得出文章结论</h3><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="450" src="//music.163.com/outchain/player?type=0&amp;id=398230010&amp;auto=1&amp;height=430"></iframe><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="450" src="//music.163.com/outchain/player?type=0&amp;id=974387610&amp;auto=1&amp;height=430"></iframe>]]></content>
     
@@ -61,6 +61,8 @@
     <category term="共识" scheme="http://example.com/tags/%E5%85%B1%E8%AF%86/"/>
     
     <category term="区块链" scheme="http://example.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    <category term="物联网" scheme="http://example.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
     
   </entry>
   

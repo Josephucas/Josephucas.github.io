@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-12-31T08:33:16.636Z</updated>
+  <updated>2021-12-31T08:38:01.891Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2021/12/31/%E5%AD%A6%E6%9C%AF%E8%8B%B1%E8%AF%AD%E5%B8%B8%E8%A7%81%E8%AF%8D%E7%BB%84/"/>
     <id>http://example.com/2021/12/31/%E5%AD%A6%E6%9C%AF%E8%8B%B1%E8%AF%AD%E5%B8%B8%E8%A7%81%E8%AF%8D%E7%BB%84/</id>
     <published>2021-12-31T07:40:33.000Z</published>
-    <updated>2021-12-31T08:33:16.636Z</updated>
+    <updated>2021-12-31T08:38:01.891Z</updated>
     
     <content type="html"><![CDATA[<p align="right">记录自己翻译遇到的一些常见词组</p> <span id="more"></span>]]></content>
     
@@ -30,6 +30,10 @@
     
     
     
+    <category term="英语" scheme="http://example.com/categories/%E8%8B%B1%E8%AF%AD/"/>
+    
+    
+    <category term="英语" scheme="http://example.com/tags/%E8%8B%B1%E8%AF%AD/"/>
     
   </entry>
   

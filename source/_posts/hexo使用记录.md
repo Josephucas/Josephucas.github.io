@@ -398,3 +398,79 @@ hexo-renderer-markdown-it-plus：好用，可以自己决定是否要渲染katex
 >
 > [Hexo 加入豆瓣读书页面](https://tding.top/archives/c7ba3a41.html)
 
+## hexo同步管理以及迁移
+
+### 将hexo部署环境上传到GitHub方法
+
+- github上切换到hexo分支，`git clone`仓库到本地。
+- 此时本地会多出一个`username.github.io`文件夹，命令行`cd`进去，删除除`.git`文件夹（如果你看不到这个文件夹，说明是隐藏了。windows下需要右击文件夹内空白处，点选'显示/隐藏 异常文件'，Mac下我就不知道了）外的其他文件夹。
+- 命令行`git add -A`把工作区的变化（包括已删除的文件）提交到暂存区（ps:`git add .`提交的变化不包括已删除的文件）。
+- 命令行`git commint -m "some description"`提交。
+- 命令行`git push origin hexo`推送到远程hexo分支。此时刷下github，如果正常操作，hexo分支应该已经被清空了。
+- 复制本地`username.github.io`文件夹中的`.git`文件夹到hexo项目根目录下。此时，hexo项目已经变成了和远程hexo分支关联的本地仓库了。而`username.github.io`文件夹的使命到此为止，你可以把它删掉，因为我们只是把它作为一个“中转站”的角色。以后每次发布新文章或修改网站样式文件时，`git add . ; git commit -m "some description" ; git push origin hexo`即可把环境文件推送到hexo分支。然后再`hexo g -d`发布网站并推送静态文件到master分支。
+
+至此，hexo的环境文件已经全部托管在github的hexo分支了
+
+### 在新的电脑部署原hexo博客
+
+首先是git有ssh key密钥之类的 ，这一部分略去，后续有时间专门介绍
+
+```shell
+git clone git@github.com:Josephucas/Josephucas.github.io.git
+#有些库下载不了，得用国内源，我后面就直接cpm了
+npm config set registry https://registry.npm.taobao.org
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+
+cnpm install hexo-cli -g
+#在根目录下cnpm install
+#然后直接hexo g hexo s 试一下
+
+```
+
+
+
+### 关于next自定义主题的有些问题
+
+一般我们在下载主题的时候都是在themes文件夹下直接git clone某仓库的，这样的话，仓库的文件夹下会直接留下.git文件这个文件在这里的时候，会导致你在博客根目录的时候，会发现这里还有一个.git文件，就会直接作为第三方的仓库，这样的坏处是，我们往往会对next主题进行一些魔改的地方就不能被同步的
+
+所以我这边就直接把.git和gitignore删掉
+
+并且，如果在github上还是以第三方仓库的形式，需要先git删除掉自己当初上传的themes
+
+如在根目录下
+
+```shell
+git rm -r --cached D:\github\Josephucas.github.io\themes\hexo-theme-next
+```
+
+这样取消对next之前的追踪记录
+
+然后再重新上传，就ok了
+
+```shell
+git add -A ；git commit -m "some description" ; git push origin hexo
+```
+
+​	但是这样还是会有一个问题，我们的next主题的_config.yml里面往往会有一些私人信息，比如一些插件的账号和密码，这些往往是我们不想让别人知道的，我第一次的时候就直接泄露了gitalk的密码，
+
+​	后面我搜索了很多关于git删除记录的方法，其他的都很麻烦，用bfg还算是比较方便的
+
+```sh
+java -jar bfg-VERSION .jar YOUR-REPOSITORY/ .git --delete-files "config.py"
+```
+
+​	但是最后还是直接到github里面的gitalk里面把原来的密钥删掉，生成新的密钥，是最方便的，然后到博客根目录的gitignore里面直接把 config文件加入忽略上传，并且删掉原来的config文件，我自己通过第三方（网盘或者U盘或者微信）同步config文件
+
+```shell
+git rm -r --cached "D:\github\Josephucas.github.io\themes\hexo-theme-next\_config.yml"
+git commit -m "some discription";git push origin hexo
+```
+
+
+
+> [hexo博客同步管理及迁移](https://www.jianshu.com/p/fceaf373d797)
+>
+> [十分鐘超詳細替 Hexo Next 開啟 Gitalk 留言版](https://hsiangfeng.github.io/hexo/20191206/2397475810/)
+>
+> [在GitHub上公开秘密：泄露凭证和API密钥后该怎么办](https://blog.csdn.net/dfsgwe1231/article/details/105993314)
+

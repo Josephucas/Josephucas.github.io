@@ -6,7 +6,7 @@ categories:
   - 声誉共识
 tags:
   - 声誉机制
-  - 共识
+  - 共识机制
   - 区块链
   - 物联网
 abbrlink: 103

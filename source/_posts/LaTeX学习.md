@@ -1,5 +1,6 @@
 ---
 title: LaTeX学习
+abbrlink: 16707
 date: 2022-01-04 19:19:58
 categories:
 tags:

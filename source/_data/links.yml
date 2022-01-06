@@ -1,0 +1,30 @@
+defaultlinks:
+  - name: 他乡之客 # 网站名称
+    site: https://josephucas.github.io/ # 网站地址
+    info: 凡有所学，皆成性格 # 网站描述
+    avatar: http://localhost:4000/images/avatar.jpg # 网站头像
+
+  - name: 暮雨千泷 # 网站名称
+    site: https://www.myql.xyz # 网站地址
+    info: 青天白日梦神仙 # 网站描述
+    avatar: https://cdn.jsdelivr.net/gh/leicancun/img@main/images/avatar.webp # 网站头像
+
+  - name: 暮雨如鱼饮水，冷暖自知千泷 # 网站名称
+    site: https://wangjiezhe.com # 网站地址
+    info: 蓝田生美玉，西风栽冷香。 # 网站描述
+    avatar: https://wangjiezhe.com/images/avatar.jpg # 网站头像
+  
+  - name: AnFrank # 网站名称
+    site: https://enfangzhong.github.io/ # 网站地址
+    info: Stay Hungry Stay Foolish # 网站描述
+    avatar: https://github.com/enfangzhong/enfangzhong.github.io/blob/master/images/avatar.jpg # 网站头像
+
+  - name: LOGI # 网站名称
+    site: https://logi.im # 网站地址
+    info: 会点代码的强迫症 # 网站描述
+    avatar: https://code.bdstatic.com/npm/logicdn@1.0.0/logi.im/usr/images/global/logo.webp # 网站头像
+
+  - name: 千灵夙赋 # 网站名称
+    site: https://qianling.pw/ # 网站地址
+    info: 千灵 # 网站描述
+    avatar: https://qianling.pw/images/avatar.png # 网站头像

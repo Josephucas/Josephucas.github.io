@@ -1,14 +1,15 @@
 ---
 title: An Efficient Permissioned Blockchain with Provable Reputation Mechanism
-date: 2022-01-04 14:32:11
 categories:
- - 区块链
- - 共识机制
- - 声誉共识
+  - 区块链
+  - 共识机制
+  - 声誉共识
 tags:
- - 声誉机制
- - 区块链
- - 共识机制
+  - 声誉机制
+  - 区块链
+  - 共识机制
+abbrlink: 17364
+date: 2022-01-04 14:32:11
 description:
 top:
 ---

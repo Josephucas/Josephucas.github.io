@@ -474,3 +474,13 @@ git commit -m "some discription";git push origin hexo
 >
 > [在GitHub上公开秘密：泄露凭证和API密钥后该怎么办](https://blog.csdn.net/dfsgwe1231/article/details/105993314)
 
+## 增加友链
+
+
+
+> 本人采用这个：[hexo next 自定义友链页面](https://www.myql.xyz/post/84bf68a6/) 
+>
+> 我觉得这个也不错：[Hexo NexT 添加友链页面](https://wangjiezhe.com/posts/2021-03-30-add-link-page/)
+>
+> [Hexo个人博客自定义友链页面](https://enfangzhong.github.io/2019/12/08/Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%8B%E9%93%BE%E9%A1%B5%E9%9D%A2/)
+

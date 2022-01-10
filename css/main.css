@@ -1297,7 +1297,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #f9e5ff;
+  background: #55ff1f;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2808,7 +2808,7 @@ ul.breadcrumb li + li:last-child {
   white-space: nowrap;
 }
 body {
-  background: url("/images/mimi.webp");
+  background: url("/images/secene.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 100% 100%;

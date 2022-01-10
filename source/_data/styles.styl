@@ -62,3 +62,68 @@
  overflow: hidden;
  white-space: nowrap;
 }
+
+
+body {
+ 	background:url(/images/secene.jpg);
+ 	background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-position:100% 100%;
+}
+
+
+
+
+//博客内容透明化
+//文章内容的透明度设置
+.content-wrap {
+  opacity: 0.8;
+}
+.main-inner { 
+   // margin-top: 60px;
+   // padding: 60px 60px 60px 60px;
+
+    //opacity: 0.8;
+}
+//侧边框的透明度设置
+//.sidebar {
+//  opacity: 0.8;
+//}
+
+.sidebar-inner {
+  background: rgba(255,255,255,0.7) none repeat scroll !important;
+  }
+
+//菜单栏的透明度设置
+.header-inner {
+  background: rgba(255,255,255,0.8);
+}
+
+//搜索框（local-search）的透明度设置
+.popup {
+  opacity: 0.8;
+}
+
+.post-block {
+    background: rgba(255,255,255,0.7) none repeat scroll !important;
+}
+
+.comments {
+    background: rgba(255,255,255,0.7) none repeat scroll !important;
+}
+
+// 圆角设置
+$border-radius-inner     = 20px 20px 20px 20px;
+$border-radius           = 20px;
+
+custom_file_path:
+  variable: source/_data/variables.styl
+
+    // 主页文章添加阴影效果
+.post {
+   margin-top: 60px;
+   padding: 20px;
+   margin-bottom: 60px;
+   -webkit-box-shadow: 0 0 5px rgba(120, 128, 114, 1.5);
+   -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);
+}

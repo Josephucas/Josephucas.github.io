@@ -484,3 +484,7 @@ git commit -m "some discription";git push origin hexo
 >
 > [Hexo个人博客自定义友链页面](https://enfangzhong.github.io/2019/12/08/Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%8B%E9%93%BE%E9%A1%B5%E9%9D%A2/)
 
+## 添加背景图片和虚化
+
+> [next主题美化——背景图片、动画](https://www.snowmoon.top/2021/02/21/next%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/)我用的好像是这个
+

@@ -1,5 +1,6 @@
 ---
 title: VRF算法学习
+abbrlink: 25666
 date: 2022-01-07 15:57:26
 categories:
 tags:

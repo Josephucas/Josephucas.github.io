@@ -10,7 +10,7 @@ top:
 
 <p align="right">latex基本使用技巧</p> 
 
-[TOC]
+
 
 
 

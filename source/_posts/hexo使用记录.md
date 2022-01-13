@@ -488,3 +488,36 @@ git commit -m "some discription";git push origin hexo
 
 > [next主题美化——背景图片、动画](https://www.snowmoon.top/2021/02/21/next%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/)我用的好像是这个
 
+## hexo-blog配置cdn
+
+##### 加速常见的通用前端文件
+
+主要是一些比较常见的前端文件，像是jquery这种，next主题里面提供了十分便捷的修改方式，打开主题配置文件`_config.yml`，搜索关键词`Script Vendors`然后就直接把哪些注释掉的重新启用即可
+
+##### 加速项目自己的前端文件
+
+除了上面常用的一些前端资源的cdn之外，我们还可以通过jsdelivr来对我们项目自己的前端文件进行加速。
+
+从此处可以看到，jsdelivr将GitHub上的文件都cdn起来了（当然前提是你的仓库是公开的），那么我们就可以使用这个cdn来加载我们项目里的前端文件了，同样是修改next主题配置文件`_config,yml`，搜索`Assets`，下面是修改前后的对比（注释掉的内容是修改前）
+
+```yaml
+# Assets
+# css: css
+# js: js
+# images: images
+css: //cdn.jsdelivr.net/gh/user/repo@master/css
+js: //cdn.jsdelivr.net/gh/user/repo@master/js
+images: //cdn.jsdelivr.net/gh/user/repo@master/images
+```
+
+- 注意将user和repo修改为自己对应的用户名和仓库名称
+- 可以先自己尝试着看能不能访问到对应的js文件来进行验证
+
+> https://wuweizhao.com/2020/05/13/hexo-blog%E9%85%8D%E7%BD%AEcdn/
+
+
+
+## hexo字体配置
+
+> https://spartazhc.github.io/2020/06/03/Next%E4%B8%BB%E9%A2%98%E5%AD%97%E4%BD%93%E9%85%8D%E7%BD%AE/
+

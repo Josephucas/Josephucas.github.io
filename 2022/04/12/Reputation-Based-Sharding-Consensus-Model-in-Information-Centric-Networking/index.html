@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/Josephucas/Josephucas.github.io@main/css/main.css">
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="副标题   摘要    关键词 区块链； 信息中心网络；分片；声誉；共识；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reputation-Based Sharding Consensus Model in Information-Centric Networking">
+<meta property="og:url" content="http://example.com/2022/04/12/Reputation-Based-Sharding-Consensus-Model-in-Information-Centric-Networking/index.html">
+<meta property="og:site_name" content="他乡之客">
+<meta property="og:description" content="副标题   摘要    关键词 区块链； 信息中心网络；分片；声誉；共识；">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/josephucas/pcc-beed/raw/master/img/image-20220424165757562.png">
+<meta property="og:image" content="https://gitee.com/josephucas/pcc-beed/raw/master/img/image-20220424170924047.png">
+<meta property="article:published_time" content="2022-04-12T08:56:02.000Z">
+<meta property="article:modified_time" content="2022-04-24T09:14:11.696Z">
+<meta property="article:author" content="Joseph Smith">
+<meta property="article:tag" content="区块链">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/josephucas/pcc-beed/raw/master/img/image-20220424165757562.png">
+
+<link rel="canonical" href="http://example.com/2022/04/12/Reputation-Based-Sharding-Consensus-Model-in-Information-Centric-Networking/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Reputation-Based Sharding Consensus Model in Information-Centric Networking | 他乡之客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end -->
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="他乡之客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">他乡之客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Excellence is an art won by training and habituation.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        
+            
+  <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+
+
+      
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-books">
+
+    <a href="/books/" rel="section"><i class="fa fa-book fa-fw"></i>books</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/Josephucas" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/12/Reputation-Based-Sharding-Consensus-Model-in-Information-Centric-Networking/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Joseph Smith">
+      <meta itemprop="description" content="凡有所学，皆成性格">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="他乡之客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Reputation-Based Sharding Consensus Model in Information-Centric Networking
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-04-12 16:56:02" itemprop="dateCreated datePublished" datetime="2022-04-12T16:56:02+08:00">2022-04-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-04-24 17:14:11" itemprop="dateModified" datetime="2022-04-24T17:14:11+08:00">2022-04-24</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p align="right">副标题</p> 
+<h2 id="摘要"><a class="markdownIt-Anchor" href="#摘要"></a> 摘要</h2>
+<h2 id=""><a class="markdownIt-Anchor" href="#"></a> </h2>
+<h2 id="关键词"><a class="markdownIt-Anchor" href="#关键词"></a> 关键词</h2>
+<p>区块链； 信息中心网络；分片；声誉；共识；</p>
+<span id="more"></span>
+<h2 id="研究问题"><a class="markdownIt-Anchor" href="#研究问题"></a> 研究问题</h2>
+<h3 id="研究背景简要介绍"><a class="markdownIt-Anchor" href="#研究背景简要介绍"></a> 研究背景(简要介绍)</h3>
+<p>​	介绍区块链技术和信息中心网络的集成，讲述区块链存在的交易效率的问题和现有的解决方法，其中重点介绍了几种分片机制和现有分片机制的问题，</p>
+<h3 id="研究问题或解决技术问题描述需定位和描述清晰"><a class="markdownIt-Anchor" href="#研究问题或解决技术问题描述需定位和描述清晰"></a> 研究问题或解决技术问题描述（需定位和描述清晰）</h3>
+<p>​	这篇文章结合SEANet网络可以提供的优势特征如节点之间存在信息交互的特性、网内AE模块的计算能力以及确定性时延解析服务（可以提供分布式、现场的、服务时延保障的ID-NA解析服务）进行建模仿真，基于网内节点对网络贡献度指标（如转发次数、丢包率、命中次数）等角度提取声誉信息，提出了一种多维声誉模型来提高区块链节点的可信度。</p>
+<p>​	信誉值由信任参数计算，包括服务质量（QoS）、安全质量（QoSec）、评估信誉、过去信誉和推荐信誉。多维度的声誉值利用客观信任、主观信任和历史信任的角度衡量声誉价值，保证了高声誉价值不能通过欺骗获得，任何新节点都无法通过在短时间内表现良好而显著提高声誉价值。</p>
+<p>​	避免了现有声誉评价中由于只考虑区块交易中的行为、对社区的贡献、评论维度的主观评价而带来的合谋或垄断等安全风险。此外，还提出了一种基于网络拓扑的分片划分方案来优化分片组的共识传输过程，以减少共识验证时延。该分片方案通过信誉值和网络距离计算出的总相似度参数，可以实现分片之间的信誉和网络距离的均匀分布。同时，我们也引入名称解析系统为分片的注册和查询提供优势，帮助快速有效地分发交易等事务。</p>
+<h2 id="研究现状"><a class="markdownIt-Anchor" href="#研究现状"></a> 研究现状</h2>
+<h3 id="围绕研究问题进行相关研究成果列举注明参考文献"><a class="markdownIt-Anchor" href="#围绕研究问题进行相关研究成果列举注明参考文献"></a> 围绕研究问题，进行相关研究成果列举（注明参考文献）</h3>
+<p>​	对于目前区块链中六种最著名和最典型的分片机制，即Monoxide[101], Elastico[93], OmniLedger[94], Rapidchain[95], Chainspace[102], 和Ethereum 2.0[103]，分片方案大都是基于随机性的，即定期重新洗牌一致共识节点，随机分组以确保系统的安全性。</p>
+<p>​	随机方案要满足良好的随机性，即需要满足几个重要的属性，不偏置性、不可预测性和公共可验证性。目前提出的抗偏差的分布随机性方案主要有以下几种：（1）基于PoW的随机方案。在弹性节点中，每个节点在PoW哈希中竞争以获得其身份，然后所有节点被随机分配到不同的碎片[104] (2) RandHound和RandHerd[105]。通过在(t，n)阈值安全模型中提供抗偏差的公共随机性，该模型已经在阈值密码学[106]、[107]和拜占庭共识协议[108]中广泛使用。（3）Algorand [109]。提出了一种基于委员会的共识协议，该协议使用可验证的随机函数(VRF)[110]，以委员会成员的账户余额（即股份），以私人和非互动的方式进行加权。然而，这些都不容易实现。产生公众的随机性是困难的，因为积极的对手可能会不诚实地使公众的随机选择偏向他们的优势。</p>
+<p>​	研究者们开始引入了基于信任的分片分配算法，以便根据节点的信任分数在分片之间分配节点。在分片和领导人选举过程中使用的信任分数可以将恶意攻击的对手影响降至最低。[113] 提出了一个信任模型，该模型通过统计共识过程中每个节点同行评审的汇总结果来评估信誉。[114] 介绍了一种新的信誉方案，利用了一个分层的链结构来分别记录交易和声誉。通过一个单独的声誉链更新每个节点的声誉。声誉方案是基于每个节点对共识过程所作贡献中的有效工作。为了确保分片子链的安全，[115,116]增加了声誉评估维度，该维度基于对等方客户的可信度，即与同一分片中的对等方关联的客户，而不仅仅是对共识过程的评估。同时，新的分片聚类方法也受到了研究人员的关注。[117]使用自适应对冲算法[100]进行分片组选择。它是一种决策论在线学习方法，根据最佳策略最小化共识节点的累积损失。[99]基于遗传算法（GA）设计了基于信任的分片分布（TBSD）模型，为分片分布的优化问题提供了足够好的解决方案。基于改进的遗传算法计算最优分片分布，通过探索各种解空间快速找到近似解。[98]提出了一种基于K-Means算法的地理邻近感知聚类（GPSC）方法，以降低构建整个网络拓扑的复杂性，该方法基于著名的K-Means算法将一致性节点分为多个分片簇。这些分片分配方案在一定程度上优化了简单随机分配方法的安全性和效率，但仍然忽略了节点间的异构性。在不考虑节点间服务质量的情况下，对节点的评价信誉进行聚合。这些能力较差的共识节点可能会成为瓶颈，阻碍系统吞吐量。</p>
+<h3 id="研究现状总结及现有研究仍然存在不足或问题"><a class="markdownIt-Anchor" href="#研究现状总结及现有研究仍然存在不足或问题"></a> 研究现状总结，及现有研究仍然存在不足或问题</h3>
+<p>现有的解决方案不能使区块链像所需要的那样扩展到数百或成千上万的参与者[111]。如果没有良好的随机性，区块链系统的安全性就会被破坏。即使有良好的随机性，区块链系统也可能很容易受到破坏。例如，通过一个复杂的攻击，如贿赂攻击[112]，对手可能有能力控制整体计算能力的临时多数（例如，超过50%），这反过来可能会破坏整个系统。</p>
+<h2 id="思路特色"><a class="markdownIt-Anchor" href="#思路特色"></a> 思路特色</h2>
+<h3 id="与现有研究技术手段不同之处"><a class="markdownIt-Anchor" href="#与现有研究技术手段不同之处"></a> 与现有研究（技术手段）不同之处</h3>
+<p>​	基于上述调查结果，我们提出本文基于声誉的分片共识模型，并利用亲和传播（AP）算法将共识节点聚集到分片中。考虑到最小的犯错动机和对验证安全性的可量化信心，客户可以在保证安全性的情况下实现实时处理速度的需求。在下一小节我们将对我们的具体方案进行详细描述。</p>
+<h2 id="关键问题技术点"><a class="markdownIt-Anchor" href="#关键问题技术点"></a> 关键问题/技术点</h2>
+<h3 id="围绕研究题目提炼出需要解决的几个关键问题点技术点"><a class="markdownIt-Anchor" href="#围绕研究题目提炼出需要解决的几个关键问题点技术点"></a> 围绕研究题目，提炼出需要解决的几个关键问题点/技术点</h3>
+<p>本研究点的主要贡献如下：</p>
+<p>（1） 我们提出了一种新的多因素信任模型用于一致性共识中的共识参与节点的信誉评估。这些评估参数将从客观信任、主观信任和历史信任的角度衡量声誉价值，从而将恶意节点通过合谋和欺骗改善声誉的概率降至最低。</p>
+<p>（2） 分片分配方案通过亲和传播算法（Affinity Propagation，AP）进行优化。设计新的余弦相似度输入的计算方法。聚类结果很好地考虑了分片内网络距离的减小。所有分片集群在网络中均匀分布，而不是聚集在一个域中。同时，我们的模型还最小化了恶意节点在分片之间的分布，以提高基于分片的区块链的安全性。</p>
+<p>（3） 用OMNET++进行了实验分析。仿真结果表明，我们的声誉方案的估计声誉值与真实声誉值之间的归一化均方误差（NMSE）小于0.02，这证明了我们的声誉评估机制的可靠性。同时，在1000个节点的大型联盟区块链网络的情况下，TPS性能可以达到经典分片OmniLedger方案的1.4倍。</p>
+<h2 id="解决方案"><a class="markdownIt-Anchor" href="#解决方案"></a> 解决方案</h2>
+<h3 id="总体解决方案最好能画一个总体方案图-或有一段描述清楚总体思路"><a class="markdownIt-Anchor" href="#总体解决方案最好能画一个总体方案图-或有一段描述清楚总体思路"></a> 总体解决方案（最好能画一个总体方案图、或有一段描述清楚总体思路）</h3>
+<p>我们给出了基于声誉的分片模型的架构设计，对关键组件的实现方法进行了定义，并详细描述了模型的安全性和合理性。系统模型如图3.2所示。关键组件包括三个部分：声誉统计、导出和分发分片节点的分组结果、查找用于并行处理事务的可用分片。</p>
+<p><img src="https://gitee.com/josephucas/pcc-beed/raw/master/img/image-20220424165757562.png" alt="image-20220424165757562"></p>
+<h3 id="每个问题点技术点分别的解决方案或模型设计"><a class="markdownIt-Anchor" href="#每个问题点技术点分别的解决方案或模型设计"></a> 每个问题点/技术点分别的解决方案或模型设计</h3>
+<h4 id="声誉机制"><a class="markdownIt-Anchor" href="#声誉机制"></a> 声誉机制</h4>
+<p>​	声誉统计：声誉数据可以通过网络边缘计算进行收集、处理和验证，由网内的分布式算力提供一个分布式的信任管理系统支持，该系统监控共识节点的行为，以管理和计算声誉值。边缘数据的聚合可以通过SDN技术来实现，为分片的计算提供有效参数。</p>
+<p>​	分片机制增加了区块链网络的可扩展性，但也增加了恶意攻击的影响。为了解决这个问题，研究人员引入了共识节点的信任模型来提高分片和选举过程的安全性。然而，现有研究中的信任模型多基于节点在区块交易中的行为、对社区的贡献、评论等来计算声誉价值。这些维度基于区块链中其他节点的主观评价，而没有考虑网络层共识节点的网络特征。合谋攻击或垄断攻击等安全风险的存在使得这些方案无法提供足够的信任。</p>
+<p>​	因此，我们设计了声誉评分的多因素信任模型，该模型将信任参数扩展到服务质量（QoS）、安全质量（QoSec）、评估信誉、过去信誉和推荐信誉。这些评估因素将从客观信任、主观信任和历史信任的角度衡量声誉价值，如图3.3所示。我们的模型保证了两个重要问题，即声誉价值的积累需要一定的时间，而高声誉值不能通过欺骗获得。任何新节点都无法通过在短时间内表现良好而显著提高声誉值。同时，如果可信共识验证节点被检测为行为不端，它将失去系统中的所有声誉积累值，其身份将被列入黑名单。所有其之前验证的交易都将被重新检查，恶意行为的成本非常昂贵，因此保证可信验证节点在任何情况下都没有不当行为的动机。</p>
+<p><img src="https://gitee.com/josephucas/pcc-beed/raw/master/img/image-20220424170924047.png" alt="image-20220424170924047"></p>
+<p>导出和分发分片节点的分组结果：通过SDN技术获取分片计算的声誉参数和网络距离参数，进行聚类参数和聚类算法的计算，从而得到维持公平分片分布的最优分片聚类集并完成结果的分发</p>
+<p>查找用于并行处理事务的可用分片：分片注册、解析和交易承诺如图3.2的步骤1-3所示。共识阶段中的每个分片的消息广播主节点在本地SNR中使用其ID-NA注册。当事务验证请求提交给客户端节点时，它们从SNR请求最近分片的主节点的网络NA地址，以找到最近的可用分片集。</p>
+<h2 id="实验设计结果分析"><a class="markdownIt-Anchor" href="#实验设计结果分析"></a> 实验设计&amp;结果分析</h2>
+<h3 id="场景选择-实验设计-指标选取"><a class="markdownIt-Anchor" href="#场景选择-实验设计-指标选取"></a> 场景选择、实验设计、指标选取</h3>
+<p>​	数据安全：考虑到数据传输和存储的安全性，使用加密技术（如RSA、ECC）对重要信息和消息进行加密和签名。本文不讨论安全方案数据。默认情况下，数据的传输和存储不能被篡改。</p>
+<p>​	共识协议：在每个分片内部使用的共识协议是PBFT（实用拜占庭容错）。同时，我们参考了文献[76]中提出的可信性证明（Proof-of-Believability，PoB）的方法。该协议将每个分片内部中的所有共识验证节点分为两组，即可信共识组和普通共识组。可信验证组在第一阶段快速处理事务。之后，普通验证组在第二阶段对交易进行采样和验证，以更高的安全性。节点被选入可信共识组的概率由可信度分数决定，在我们模型中的可信度分数即是声誉分数值。</p>
+<p>​	跨分片交易：如上所述，我们在本研究点中不关注跨分片交易。文献[118-122]中提出的跨分片交易方案可与本方案进行结合</p>
+<h3 id="实验结果分析"><a class="markdownIt-Anchor" href="#实验结果分析"></a> 实验结果分析</h3>
+<h2 id="论文结论"><a class="markdownIt-Anchor" href="#论文结论"></a> 论文结论</h2>
+<h3 id="得出文章结论"><a class="markdownIt-Anchor" href="#得出文章结论"></a> 得出文章结论</h3>
+<p>一般般吧，优点是在icn网络中有了声誉机制</p>
+<p>缺点是</p>
+<ol>
+<li>没有介绍这种声誉机制中的声誉值是怎么计算的，只是用了别人已有的声誉值</li>
+<li>这里面介绍的ap分片算法的计算复杂度过高，在工业实践方面根本就没有可行性</li>
+<li>这里面的声誉机制的互通本来就有一个bug那就是存在一个独立的声誉评测机构</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/04/01/raft%E5%AD%A6%E4%B9%A0/" rel="prev" title="raft学习">
+      <i class="fa fa-chevron-left"></i> raft学习
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/06/07/Information-Centric-Massive-IoT-Based-Ubiquitous-Connected-VR-AR-in-6G-A-Proposed-Caching-Consensus-Approach/" rel="next" title="Information-Centric Massive IoT-Based Ubiquitous Connected VR/AR in 6G: A Proposed Caching Consensus Approach">
+      Information-Centric Massive IoT-Based Ubiquitous Connected VR/AR in 6G: A Proposed Caching Consensus Approach <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text"> 摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text"> </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E8%AF%8D"><span class="nav-number">3.</span> <span class="nav-text"> 关键词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A0%94%E7%A9%B6%E9%97%AE%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text"> 研究问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A0%94%E7%A9%B6%E8%83%8C%E6%99%AF%E7%AE%80%E8%A6%81%E4%BB%8B%E7%BB%8D"><span class="nav-number">4.1.</span> <span class="nav-text"> 研究背景(简要介绍)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A0%94%E7%A9%B6%E9%97%AE%E9%A2%98%E6%88%96%E8%A7%A3%E5%86%B3%E6%8A%80%E6%9C%AF%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0%E9%9C%80%E5%AE%9A%E4%BD%8D%E5%92%8C%E6%8F%8F%E8%BF%B0%E6%B8%85%E6%99%B0"><span class="nav-number">4.2.</span> <span class="nav-text"> 研究问题或解决技术问题描述（需定位和描述清晰）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A0%94%E7%A9%B6%E7%8E%B0%E7%8A%B6"><span class="nav-number">5.</span> <span class="nav-text"> 研究现状</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%B4%E7%BB%95%E7%A0%94%E7%A9%B6%E9%97%AE%E9%A2%98%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%85%B3%E7%A0%94%E7%A9%B6%E6%88%90%E6%9E%9C%E5%88%97%E4%B8%BE%E6%B3%A8%E6%98%8E%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">5.1.</span> <span class="nav-text"> 围绕研究问题，进行相关研究成果列举（注明参考文献）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A0%94%E7%A9%B6%E7%8E%B0%E7%8A%B6%E6%80%BB%E7%BB%93%E5%8F%8A%E7%8E%B0%E6%9C%89%E7%A0%94%E7%A9%B6%E4%BB%8D%E7%84%B6%E5%AD%98%E5%9C%A8%E4%B8%8D%E8%B6%B3%E6%88%96%E9%97%AE%E9%A2%98"><span class="nav-number">5.2.</span> <span class="nav-text"> 研究现状总结，及现有研究仍然存在不足或问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF%E7%89%B9%E8%89%B2"><span class="nav-number">6.</span> <span class="nav-text"> 思路特色</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8E%E7%8E%B0%E6%9C%89%E7%A0%94%E7%A9%B6%E6%8A%80%E6%9C%AF%E6%89%8B%E6%AE%B5%E4%B8%8D%E5%90%8C%E4%B9%8B%E5%A4%84"><span class="nav-number">6.1.</span> <span class="nav-text"> 与现有研究（技术手段）不同之处</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E9%97%AE%E9%A2%98%E6%8A%80%E6%9C%AF%E7%82%B9"><span class="nav-number">7.</span> <span class="nav-text"> 关键问题&#x2F;技术点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%B4%E7%BB%95%E7%A0%94%E7%A9%B6%E9%A2%98%E7%9B%AE%E6%8F%90%E7%82%BC%E5%87%BA%E9%9C%80%E8%A6%81%E8%A7%A3%E5%86%B3%E7%9A%84%E5%87%A0%E4%B8%AA%E5%85%B3%E9%94%AE%E9%97%AE%E9%A2%98%E7%82%B9%E6%8A%80%E6%9C%AF%E7%82%B9"><span class="nav-number">7.1.</span> <span class="nav-text"> 围绕研究题目，提炼出需要解决的几个关键问题点&#x2F;技术点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">8.</span> <span class="nav-text"> 解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%9C%80%E5%A5%BD%E8%83%BD%E7%94%BB%E4%B8%80%E4%B8%AA%E6%80%BB%E4%BD%93%E6%96%B9%E6%A1%88%E5%9B%BE-%E6%88%96%E6%9C%89%E4%B8%80%E6%AE%B5%E6%8F%8F%E8%BF%B0%E6%B8%85%E6%A5%9A%E6%80%BB%E4%BD%93%E6%80%9D%E8%B7%AF"><span class="nav-number">8.1.</span> <span class="nav-text"> 总体解决方案（最好能画一个总体方案图、或有一段描述清楚总体思路）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AF%8F%E4%B8%AA%E9%97%AE%E9%A2%98%E7%82%B9%E6%8A%80%E6%9C%AF%E7%82%B9%E5%88%86%E5%88%AB%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%88%96%E6%A8%A1%E5%9E%8B%E8%AE%BE%E8%AE%A1"><span class="nav-number">8.2.</span> <span class="nav-text"> 每个问题点&#x2F;技术点分别的解决方案或模型设计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A3%B0%E8%AA%89%E6%9C%BA%E5%88%B6"><span class="nav-number">8.2.1.</span> <span class="nav-text"> 声誉机制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90"><span class="nav-number">9.</span> <span class="nav-text"> 实验设计&amp;结果分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%BA%E6%99%AF%E9%80%89%E6%8B%A9-%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1-%E6%8C%87%E6%A0%87%E9%80%89%E5%8F%96"><span class="nav-number">9.1.</span> <span class="nav-text"> 场景选择、实验设计、指标选取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90"><span class="nav-number">9.2.</span> <span class="nav-text"> 实验结果分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%E7%BB%93%E8%AE%BA"><span class="nav-number">10.</span> <span class="nav-text"> 论文结论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%97%E5%87%BA%E6%96%87%E7%AB%A0%E7%BB%93%E8%AE%BA"><span class="nav-number">10.1.</span> <span class="nav-text"> 得出文章结论</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Joseph Smith"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Joseph Smith</p>
+  <div class="site-description" itemprop="description">凡有所学，皆成性格</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Josephucas" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Josephucas" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2839263187@qq.com" title="E-Mail → mailto:2839263187@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=478507889&auto=1&height=66"></iframe>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Joseph Smith</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">50k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">46 分钟</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
+
+<script src="//cdn.jsdelivr.net/gh/Josephucas/Josephucas.github.io@main/js/utils.js"></script>
+
+<script src="//cdn.jsdelivr.net/gh/Josephucas/Josephucas.github.io@main/js/motion.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/gh/Josephucas/Josephucas.github.io@main/js/schemes/pisces.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/gh/Josephucas/Josephucas.github.io@main/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/Josephucas/Josephucas.github.io@main/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '2f90543433fe4484d3dc',
+      clientSecret: '0cb600827904d2dad0fed8e54b42228cc1fb52fe',
+      repo        : 'Josephucas.github.io',
+      owner       : 'Josephucas',
+      admin       : ['Josephucas'],
+      id          : '5afc1d990f9a280ed86b75df7222823e',
+        language: 'zh-CN',
+      distractionFreeMode: false
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+    </div>
+</body>
+</html>

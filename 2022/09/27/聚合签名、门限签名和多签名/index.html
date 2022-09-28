@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/Josephucas/Josephucas.github.io@main/css/main.css">
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="副标题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="聚合签名、门限签名和多签名">
+<meta property="og:url" content="http://example.com/2022/09/27/%E8%81%9A%E5%90%88%E7%AD%BE%E5%90%8D%E3%80%81%E9%97%A8%E9%99%90%E7%AD%BE%E5%90%8D%E5%92%8C%E5%A4%9A%E7%AD%BE%E5%90%8D/index.html">
+<meta property="og:site_name" content="他乡之客">
+<meta property="og:description" content="副标题">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://res.btcstudy.org/btcstudy/images/aggregate-threshold-multisig-and-multisignatures/vM3zzMB_1kA">
+<meta property="og:image" content="https://res.btcstudy.org/btcstudy/images/aggregate-threshold-multisig-and-multisignatures/6MDHG3pMWJY">
+<meta property="og:image" content="https://res.btcstudy.org/btcstudy/images/aggregate-threshold-multisig-and-multisignatures/Zc_LyuBdDzp">
+<meta property="og:image" content="https://res.btcstudy.org/btcstudy/images/aggregate-threshold-multisig-and-multisignatures/lbEMSaAzrxA">
+<meta property="article:published_time" content="2022-09-27T02:25:22.000Z">
+<meta property="article:modified_time" content="2022-09-27T08:11:53.144Z">
+<meta property="article:author" content="Joseph Smith">
+<meta property="article:tag" content="区块链">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://res.btcstudy.org/btcstudy/images/aggregate-threshold-multisig-and-multisignatures/vM3zzMB_1kA">
+
+<link rel="canonical" href="http://example.com/2022/09/27/%E8%81%9A%E5%90%88%E7%AD%BE%E5%90%8D%E3%80%81%E9%97%A8%E9%99%90%E7%AD%BE%E5%90%8D%E5%92%8C%E5%A4%9A%E7%AD%BE%E5%90%8D/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>聚合签名、门限签名和多签名 | 他乡之客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end -->
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="他乡之客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">他乡之客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Excellence is an art won by training and habituation.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        
+            
+  <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+
+
+      
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-books">
+
+    <a href="/books/" rel="section"><i class="fa fa-book fa-fw"></i>books</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/Josephucas" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/27/%E8%81%9A%E5%90%88%E7%AD%BE%E5%90%8D%E3%80%81%E9%97%A8%E9%99%90%E7%AD%BE%E5%90%8D%E5%92%8C%E5%A4%9A%E7%AD%BE%E5%90%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Joseph Smith">
+      <meta itemprop="description" content="凡有所学，皆成性格">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="他乡之客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          聚合签名、门限签名和多签名
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-09-27 10:25:22 / 修改时间：16:11:53" itemprop="dateCreated datePublished" datetime="2022-09-27T10:25:22+08:00">2022-09-27</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p align="right">副标题</p> 
+<span id="more"></span>
+<h2 id="引言"><a class="markdownIt-Anchor" href="#引言"></a> 引言</h2>
+<p>数字签名在区块链技术中扮演着举足轻重的角色，因为每一笔交易都需要签名才能成为一笔有效的交易。准确地说，数字签名在区块链协议中有三方面的目标：</p>
+<ol>
+<li>证明所有权，并为花费资金提供授权</li>
+<li>证明了不可否认性，意思是这个授权的证据是无法否认的</li>
+<li>证明了被签名的交易没有被篡改，也无法被篡改（与签名不匹配会使交易失效）</li>
+</ol>
+<p>常见的签名方案中，单个用户为其消息生成签名；这就有一个潜在的风险：它构成了一个足以使该方案崩溃的单点故障，不法分子一旦获得了你的私钥，就可以拿走该私钥控制的所有资金。</p>
+<p>上述问题可以通过引入多签名方案或者门限签名方案来避免。两类方案有一些相似之处：它们都是多方参与的协议，需要 n 个用户中至少 m 个参与签名，才能提供授权。不过，它们也有一些细微但重要的区别。这也正是正文的目的：概要地比较这两类签名方案的区别。</p>
+<p>因为一些提案（比如 MuSig2 和 FROST），这个领域正在升温，正是介绍和比较三种技术的好时机：它们有同有异，常常让大家搞混。本文的目标是，尽可能少用技术术语，比较聚合签名、门限签名和多签名三类数字签名方案，并简要介绍 MuSig2 和 FROST。</p>
+<h2 id="数字签名方案"><a class="markdownIt-Anchor" href="#数字签名方案"></a> 数字签名方案</h2>
+<p>本节内容可能引发争议，因为它的目标之一是消除对多签名、门限签名和聚合签名的混淆，而这些概念在区块链的许多情境中可以合并和组合。</p>
+<h3 id="多签名multisignatures"><a class="markdownIt-Anchor" href="#多签名multisignatures"></a> 多签名（Multisignatures）</h3>
+<p>在简单的多签名方案中，n 名用户中的每一个都有独立的一对 公/私钥，而一个有效的签名，是 n 个用户的签名的集合。<mark>最终签名的验证需要用到每一个签名者的公钥。</mark></p>
+<p>让每一个参与者都能持有自己的密钥对，使得基于多签名的授权证据占据多得多的空间。需要 n 个签名的设置不仅要在证据中包含 n 个签名，还要包含 n 个公钥。这使得多签名交易更昂贵，因为其体积和处理成本随 n 的增大而线性上升。</p>
+<p>另一方面，用户有自己个人的密钥对，可以并行参与多个签名流程，这跟门限签名相反。在门限签名中，每一个参与者都只拥有一份密钥，可以签发 <em>一部分</em> 签名。这些签名碎片必须组合起来才能生成有效的最终签名。显然，这些密钥也许不能独立参加另一个签名流程。</p>
+<p>参与多签名方案的密钥是存储在 <em>链上</em> 的，而在门限签名方案中，计算和密钥分割都是在 <em>链下</em> 完成的，只有一个公钥会存储在链上。这使得门限签名比多签名在体积和验证开销上更为便宜。</p>
+<p><img src="https://res.btcstudy.org/btcstudy/images/aggregate-threshold-multisig-and-multisignatures/vM3zzMB_1kA" alt="img"></p>
+<p>简单的多签名方案可能并不是区块链的最佳解决方案，因为其效率低下。为了解决这个问题，一些解决方案允许所有参与者用自己的私钥签名消息，然后这些签名会被组合成一个签名，并使用一把组合公钥来验证。这就是 MuSig2 及类似方案所用的机制，我们下文再叙。</p>
+<p><img src="https://res.btcstudy.org/btcstudy/images/aggregate-threshold-multisig-and-multisignatures/6MDHG3pMWJY" alt="img"></p>
+<h3 id="聚合签名aggregate-signatures"><a class="markdownIt-Anchor" href="#聚合签名aggregate-signatures"></a> 聚合签名（Aggregate signatures）</h3>
+<p>在别的应用中，聚合签名被用于减少证书链条的体积，或者在路由协议中减少消息的体积。</p>
+<p><mark>聚合签名是多签名（所有用户签名同一条消息）的重要一般化。聚合签名方案允许为 m 个不同签名者对 m 条不同消息的 m 个签名创建一条致密的签名。这就提供了更快的验证速度以及空间和带宽上的节省。</mark></p>
+<p>签名聚合的机制主要有两种：一般化聚合、序列式聚合。现假设有一组 m 个用户，各有一对公私钥，而用户 i 想签名消息 Mi。</p>
+<ol>
+<li><mark>在一般化聚合方案中，（m 个用户中的）每个用户 i 都对自己的消息 Mi 创建签名 σi 。在创建 一个聚合签名时，任何人都可以运行公共聚合算法，将全部 m 个签名压缩成单个签名 σ。</mark></li>
+<li><mark>在序列式签名聚合方案中，用户 1 签名 M1 来获得 σ1；用户组合 σ1 和 M2 来获得 σ2，以此类推。最终的签名是由用户 k 结合 Mk 和 σk-1 获得的。序列式签名聚合只能在签名流程中完成。</mark></li>
+</ol>
+<p><img src="https://res.btcstudy.org/btcstudy/images/aggregate-threshold-multisig-and-multisignatures/Zc_LyuBdDzp" alt="img"></p>
+<p>许多签名方案都因为签名聚合技术而著称，比如 Schnorr 签名，基于格的签名（lattice-based）和基于配对的签名（pairing-based）。讲到基于配对的签名，我们要重点指出 BLS 方案（由 Boneh et al. 提出），已经被 <a target="_blank" rel="noopener" href="https://medium.com/dfinity/the-internet-computer-for-geeks-a-new-dfinity-white-paper-ecb075b2d525">Dfinity</a> 和 <a target="_blank" rel="noopener" href="https://www.algorand.com/technology/white-papers">Algorand</a> 等区块链实际使用。不过，这些协议签名的都是 <em>同一条消息</em>，可以应该把它们当作是多签名的案例，而不是聚合签名方案的合适案例。</p>
+<p>最后，依然需要指出的是，大部分的这些方案都要求特定的签名顺序，但也有方案不再有这方面的要求（见 Lu et al. 的论文）。</p>
+<p>聚合签名要能限制任何敌手在一个普通用户的签名上创建有效的聚合签名。</p>
+<h3 id="门限签名threshold-signatures"><a class="markdownIt-Anchor" href="#门限签名threshold-signatures"></a> 门限签名（Threshold signatures）</h3>
+<p>一个 m-n 的门限签名方案，指的是一组 n 个签名者中任意 m 个乃至更多的签名者即可代表整个群体、生成有效签名的数字签名方案。这个签名后面可以用一个 <em>群体公钥</em> 来验证，而这个群体公钥是由参与者个公钥组合而成的。一般来说，门限签名不会暴露参与生成签名的实际成员。</p>
+<p><mark>门限签名方案的目标是控制签名能力（m &gt; 1），或者消除单点故障（n &gt; 1），又或者兼而有之。</mark></p>
+<p>每一组签名者都可以由一个受信任的群主来管理，由群主来决定谁加入和离开群组。同一个群主可以管理多个群，反过来一个群也可以将群主完全分发给群成员，使得每一个成员都参与到所有的管理操作中。</p>
+<p><mark>群 G 的 n 个成员中，任意 m 个成员构成的子集都可以生成出有效的签名。在创建签名时，每个成员都贡献一个签名碎片给特定的组合人，组合人会从这些签名碎片中推导出预想的门限签名。</mark></p>
+<p><mark>任何人只要能获得群 G 的群体公钥，就可以验证门限签名。而大家指定的组合人既可以是一个真实的实体（比如受信任的群主），也可以是一个虚拟的实体，其操作以分布式的形式在所有群成员中计算。只要被指定的组合人可以在接受一个碎片签名作为门限签名的输入之前验证其有效性，这种门限签名方案就是健壮的。</mark></p>
+<h3 id="比较"><a class="markdownIt-Anchor" href="#比较"></a> 比较</h3>
+<p>迄今为止，我们已经讨论了四种非常相似的技术。下面是它们在几个维度上的比较：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>私钥数量</th>
+<th>所需消息数量</th>
+<th>公开的公钥数量</th>
+<th>所需签名者数量</th>
+<th>公开的签名数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>简单多签名</td>
+<td>n</td>
+<td>1</td>
+<td>n</td>
+<td>n</td>
+<td>n</td>
+</tr>
+<tr>
+<td>多签名</td>
+<td>n</td>
+<td>1</td>
+<td>1</td>
+<td>n</td>
+<td>1</td>
+</tr>
+<tr>
+<td>聚合签名</td>
+<td>n</td>
+<td>1*</td>
+<td>1</td>
+<td>n</td>
+<td>1</td>
+</tr>
+<tr>
+<td>门限签名**</td>
+<td>n</td>
+<td>1</td>
+<td>1</td>
+<td>m &lt; n</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>（*）在此案例中，消息可以是完全不同的，最多可以有 n 条不同的消息</p>
+<p>（**）假设是 m-n 的门限方案</p>
+<h2 id="介绍-musig2-和-frost"><a class="markdownIt-Anchor" href="#介绍-musig2-和-frost"></a> 介绍 MuSig2 和 FROST</h2>
+<p>MuSig2 和 FROST 是一众为区块链平台引入多签名或门限签名的提议之二。本节打算对两者作一个简单的、非技术性的介绍。对它们的细节和数学原理有兴趣的，可以阅读 Nick et al. 和 Komlo and Goldberg 。</p>
+<h3 id="简要介绍-musig2"><a class="markdownIt-Anchor" href="#简要介绍-musig2"></a> 简要介绍 MuSig2</h3>
+<p>MuSig2（Nick et al.）不能被视为一种见到的多签名方案，因为它跟聚合签名方案有一些相似之处。</p>
+<p>MuSig2 的亮点有：</p>
+<ul>
+<li>可以安全地并行签名</li>
+<li>可以聚合密钥</li>
+<li>产生的输出是常规的 Schnorr 签名</li>
+<li>将通信轮次减少到了两轮，而更早的协议 MuSig 需要进行三轮通信</li>
+<li>签名者面对的复杂性与普通的 Schnorr 签名相似</li>
+</ul>
+<p>在 MuSig2 中，每个参与者都有一对公私钥。它们是使用随机数 <em>x</em> ∈ ℤ （私钥）计算 X = g ^ x （公钥）来生成的（g 是一个循环群 G 上的生成点）。</p>
+<p>这个方案使用两轮通信来让 m 个用户生成 m 个中间签名，这些签名结合在一起生成一个最终的签名。</p>
+<p>这个签名使用这些用户的公钥所结合生成的一把公钥来验证。</p>
+<p>在使用这种方案来为区块链交易授权时，最终保留在链上的只有一把公钥和一个签名，因此其成本远低于多签名、等同于使用门限签名机制所生成的签名。进一步地，MuSig2 中的密钥生成比门限签名中的密钥生成要简单。与任何门限签名方案相比，MuSig2 的主要缺点在于，它需要 m 个签名者参与（m = n），所以 MuSig2 也成了一个死板的解决方案。</p>
+<h3 id="将多签名转为门限签名"><a class="markdownIt-Anchor" href="#将多签名转为门限签名"></a> 将多签名转为门限签名</h3>
+<p>要让一种多签名方案更加灵活，一种可行的解决方案是修改算法，将之转为一种门限签名方案。这一方向需要定义一种默克尔树来包含所有可能的签名者组合的密钥。这棵默克尔树将允许我们靠遍历来检查一组签名者是不是有效的签名群组。</p>
+<p><img src="https://res.btcstudy.org/btcstudy/images/aggregate-threshold-multisig-and-multisignatures/lbEMSaAzrxA" alt="img"></p>
+<p>设 n 为参与者的数量，而 m 为阈值。则上述的默克尔树需要包含的元素数量为 <em>C(n,m)</em> 。这棵树的空间复杂性 <em>O(n^(n-m))</em> 将与阈值呈指数关系，这也很直接能推理出来：阈值 m 越小，<em>C(n,m)</em> 越大。</p>
+<p>在一棵默克尔树上搜索、遍历、插入和删除元素的时间复杂度 <em>O(log(C(n, m))) &lt; O(log(n^m)) =O(m · log(n))</em> 。</p>
+<p>使用默克尔树来存储所有可能的签名群组的想法，可以跟 MuSig2、BLS 以及任何多签名方案相结合。这个特性在比特币的 <a target="_blank" rel="noopener" href="https://medium.com/iovlabs-innovation-stories/taproot-and-rsk-6fc8a3f8ccaf">Taproot</a> 升级中以 <a target="_blank" rel="noopener" href="https://bitcoinops.org/en/topics/mast/">MAST</a>（merkelized abstract syntax trees）为名，它使用默克尔树来存储多个用户指定的、为花费该笔比特币需要满足的充分条件。</p>
+<h3 id="frost-简介"><a class="markdownIt-Anchor" href="#frost-简介"></a> FROST 简介</h3>
+<p>FROST 门限签名（Komlo and Goldberg）使用一种准受信任的签名聚合者（SA）设置，该设置的存在可以减少带宽开销。聚合者是为协作而设置的，并没有信息上的特权。SA 既可以是协议的一个参与者，也可以是一个外部的第三方。SA 要负责识别行为不轨的参与者，并在协议完成时发布群体的签名。即使 SA 自身行为不轨，协议也可对抗适应型<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Adaptive_chosen-ciphertext_attack">选择性明文攻击</a>。恶意的 SA 有能力发起分布式拒绝服务攻击，也可坏人先告状，但无法获得参与者的私钥，也无法使不合适的信息得到签署。</p>
+<p>FROST 里的密钥生成需要两轮通信，并依赖于 Pedersen 的分布式密钥生成算法，不过签名算法是基于累加型密钥分割（additive secret sharing）的。</p>
+<p>此外，签名操作利用绑定技术来避免伪造攻击。签名流程由两部分组成：一个预处理阶段和一个单轮的签名阶段；但也可以把两个阶段合而为一。</p>
+<h2 id="结语"><a class="markdownIt-Anchor" href="#结语"></a> 结语</h2>
+<p>我们研究的不同技术各有优缺点。简单的多签名方案因为需要验证多个不同的签名，可以认为是低效的。不过，他是最简单的解决方案，而且在参与者数量不多时，它也可以是有趣的选择。</p>
+<p>具备聚合特性的多签名方案，比如 MuSig2 和 BLS，克服了上述的效率缺陷，所以在参与者数量增加时，它们是可以考虑的解决方案。不过，严格来说，多签名（不论是简单的还是聚合的）还是有一些死板，因为它需要所有参与者都参与到一个操作中。</p>
+<p>一个更灵活的解决方案是门限签名，既有基于分布式密钥生成的实现方案（比如 FROST），也有 Stinson and Strobl 提出的提案，还可以将包含了所有可能签名者集合的默克尔树根任意的多签名方案（比如 MuSig2 和 BLS）相结合。</p>
+<h2 id="参考文献"><a class="markdownIt-Anchor" href="#参考文献"></a> 参考文献</h2>
+<ol>
+<li>Boneh, Dan, et al. “Aggregate and Verifiably Encrypted Signatures from Bilinear Maps.” Lecture Notes in Computer Science, vol. 2656, Springer, 2003, pp. 416–432. SpringerLink, <a target="_blank" rel="noopener" href="https://link.springer.com/chapter/10.1007/3-540-39200-9_26">https://link.springer.com/chapter/10.1007/3-540-39200-9_26</a>.</li>
+<li>Komlo, Chelsea, and Ian Goldberg. “FROST: Flexible Round-Optimized Schnorr Threshold Signatures.” Lecture Notes in Computer Science, vol. 12804, Springer, 2021, pp. 34–65. SpringerLink, <a target="_blank" rel="noopener" href="https://link.springer.com/chapter/10.1007/978-3-030-81652-0_2">https://link.springer.com/chapter/10.1007/978-3-030-81652-0_2</a>.</li>
+<li>Lu, Xiuhua, et al. “A Lattice-Based Unordered Aggregate Signature Scheme Based on the Intersection Method.” IEEE Access, vol. 6, 2018, pp. 33986–33994. IEEE Xplore, <a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/8386429">https://ieeexplore.ieee.org/document/8386429</a>.</li>
+<li>Nick, Jonas, et al. “MuSig2: Simple Two-Round Schnorr Multi-signatures.” Lecture Notes in Computer Science, vol. 12825, Springer, 2021, pp. 189–221. SpringerLink, <a target="_blank" rel="noopener" href="https://link.springer.com/chapter/10.1007/978-3-030-84242-0_8">https://link.springer.com/chapter/10.1007/978-3-030-84242-0_8</a>.</li>
+<li>Stinson, Douglas R., and Reto Strobl. “Provably Secure Distributed Schnorr Signatures and a (t, n) Threshold Scheme for Implicit Certificates.” Lecture Notes in Computer Science, vol. 2119, Springer, 2001, pp. 417–434. SpringerLink, <a target="_blank" rel="noopener" href="https://link.springer.com/chapter/10.1007/3-540-47719-5_33">https://link.springer.com/chapter/10.1007/3-540-47719-5_33</a>.</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/09/26/HotStuff%EF%BC%9ABFT-Consensus-in-the-Lens-of-Blockchain/" rel="prev" title="HotStuff：BFT Consensus in the Lens of Blockchain">
+      <i class="fa fa-chevron-left"></i> HotStuff：BFT Consensus in the Lens of Blockchain
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/09/27/pbft%E4%BD%BF%E7%94%A8ip-multicast%E7%9A%84%E7%BC%BA%E7%82%B9/" rel="next" title="pbft使用ip multicast的缺点">
+      pbft使用ip multicast的缺点 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text"> 引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="nav-number">2.</span> <span class="nav-text"> 数字签名方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%AD%BE%E5%90%8Dmultisignatures"><span class="nav-number">2.1.</span> <span class="nav-text"> 多签名（Multisignatures）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%81%9A%E5%90%88%E7%AD%BE%E5%90%8Daggregate-signatures"><span class="nav-number">2.2.</span> <span class="nav-text"> 聚合签名（Aggregate signatures）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%A8%E9%99%90%E7%AD%BE%E5%90%8Dthreshold-signatures"><span class="nav-number">2.3.</span> <span class="nav-text"> 门限签名（Threshold signatures）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AF%94%E8%BE%83"><span class="nav-number">2.4.</span> <span class="nav-text"> 比较</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D-musig2-%E5%92%8C-frost"><span class="nav-number">3.</span> <span class="nav-text"> 介绍 MuSig2 和 FROST</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E8%A6%81%E4%BB%8B%E7%BB%8D-musig2"><span class="nav-number">3.1.</span> <span class="nav-text"> 简要介绍 MuSig2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E5%A4%9A%E7%AD%BE%E5%90%8D%E8%BD%AC%E4%B8%BA%E9%97%A8%E9%99%90%E7%AD%BE%E5%90%8D"><span class="nav-number">3.2.</span> <span class="nav-text"> 将多签名转为门限签名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#frost-%E7%AE%80%E4%BB%8B"><span class="nav-number">3.3.</span> <span class="nav-text"> FROST 简介</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E8%AF%AD"><span class="nav-number">4.</span> <span class="nav-text"> 结语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">5.</span> <span class="nav-text"> 参考文献</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Joseph Smith"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Joseph Smith</p>
+  <div class="site-description" itemprop="description">凡有所学，皆成性格</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Josephucas" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Josephucas" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2839263187@qq.com" title="E-Mail → mailto:2839263187@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=478507889&auto=1&height=66"></iframe>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Joseph Smith</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">50k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">46 分钟</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
+
+<script src="//cdn.jsdelivr.net/gh/Josephucas/Josephucas.github.io@main/js/utils.js"></script>
+
+<script src="//cdn.jsdelivr.net/gh/Josephucas/Josephucas.github.io@main/js/motion.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/gh/Josephucas/Josephucas.github.io@main/js/schemes/pisces.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/gh/Josephucas/Josephucas.github.io@main/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/Josephucas/Josephucas.github.io@main/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '2f90543433fe4484d3dc',
+      clientSecret: '0cb600827904d2dad0fed8e54b42228cc1fb52fe',
+      repo        : 'Josephucas.github.io',
+      owner       : 'Josephucas',
+      admin       : ['Josephucas'],
+      id          : 'c0635751c48fd109a9137f3cca79340e',
+        language: 'zh-CN',
+      distractionFreeMode: false
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+    </div>
+</body>
+</html>

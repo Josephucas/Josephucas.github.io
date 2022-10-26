@@ -16,6 +16,7 @@ date: 2021-12-29 20:35:25
 
 ```sh
  hexo n "博客名称"  => hexo new "博客名称"   #这两个都是创建新文章，前者是简写模式
+ hexo new paper "文章名称"    #其中paper表示自己x模板
 $ hexo p  => hexo publish
 $ hexo g  => hexo generate  #生成
 $ hexo s  => hexo server  #启动服务预览
@@ -521,3 +522,41 @@ images: //cdn.jsdelivr.net/gh/user/repo@master/images
 
 > https://spartazhc.github.io/2020/06/03/Next%E4%B8%BB%E9%A2%98%E5%AD%97%E4%BD%93%E9%85%8D%E7%BD%AE/
 
+## hexo支持pdf
+
+~~~bash
+npm install --save hexo-pdf
+~~~
+
+这一步在国内有两种可行办法，一种是使用本地的文件，让hexo从博客中加载，一种就是放在云端的存储仓库进行加载。这里两种方法都做演示，但是推荐使用后者。
+
+### 本地文件
+
+1. 这个方法比较简单，但是效果较差，可能会造成较大的卡顿，首先在本地的根目录下打开`source`在这个文件夹下直接将你的pdf放进去即可。
+
+在你的本地的博客根目录下新建一篇文章命令行
+
+~~~bash
+hexo new "文章名称"
+~~~
+
+到你的根目录里的`source/_posts`文件夹中找到新建的文章，在完成了文章的头部编辑之后，在正文部分只用加一句
+
+回到博客的根目录运行,生成hexo部署文档
+
+~~~bash
+hexo g
+~~~
+
+1. 新建一个英文名称的公共仓库。
+2. 在本地文件夹clone或者是通过任何方法使本地文件夹和仓库相连通
+3. 将你要发布的pdf放在本地的文件夹中
+4. 使用`git push`命令将文件推到远端仓库
+5. 使用jsDelivr的cdn服务实现国内的加速访问，访问方法如下：
+   在文档中加入pdf嵌入语句
+
+```markdown
+{% pdf https://cdn.jsdelivr.net/gh/你的GitHub账户名/你的新建的仓库名/你的文件路径/你的pdf文件.pdf %}
+```
+
+  到这里应该就已经全部结束了，但是在实际访问过程中，我发现我的一些下载插件经常会自动抓取到pdf并提示下载，遇到这种情况就可以通过白名单，或者是忽略解决。

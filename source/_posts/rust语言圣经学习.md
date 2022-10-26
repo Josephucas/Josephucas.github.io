@@ -1,4 +1,14 @@
 ---
+title: rust语言圣经学习
+abbrlink: 18543
+date: 2022-02-15 10:10:03
+categories:
+tags:
+description:
+top:
+---
+
+---
 title: VRF算法学习
 abbrlink: 25666
 date: 2022-01-07 15:57:26
@@ -6,6 +16,7 @@ categories:
 tags:
 description:
 top:
+
 ---
 
 <p align="right">RUST教程笔记</p> 
@@ -135,4 +146,3 @@ String是字符串，`String`就是三个玩意组成的：指向缓冲区的堆
 ## [通过大量的链表学习Rust](https://weathfold.gitbooks.io/rust-too-many-lists-zhcn/content/)
 
 ## [rust Primer](https://hardocs.com/d/rustprimer/index.html)
-

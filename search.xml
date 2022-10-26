@@ -8,7 +8,7 @@
       <link href="/2022/10/26/%E4%B8%AD%E8%8B%B1%E6%96%87%E5%86%99%E4%BD%9C%E4%B9%A0%E6%83%AF/"/>
       <url>/2022/10/26/%E4%B8%AD%E8%8B%B1%E6%96%87%E5%86%99%E4%BD%9C%E4%B9%A0%E6%83%AF/</url>
       
-        <content type="html"><![CDATA[<p align="right">副标题</p> <span id="more"></span><figure class="highlight awk"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% pdf https:<span class="regexp">//</span>cdn.jsdelivr.net<span class="regexp">/gh/</span>Josephucas<span class="regexp">/reading-notes/</span>English-writing-habits/中式英文书写错误习惯勘误.pdf %}</span><br></pre></td></tr></tbody></table></figure>]]></content>
+        <content type="html"><![CDATA[<p align="right">副标题</p> <span id="more"></span><figure class="highlight awk"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% pdf https:<span class="regexp">//</span>cdn.jsdelivr.net<span class="regexp">/gh/</span>Josephucas<span class="regexp">/Josephucas.github.io/</span>tree<span class="regexp">/hexo/</span>pdf/中式英文书写错误习惯勘误.pdf %}</span><br></pre></td></tr></tbody></table></figure>]]></content>
       
       
       

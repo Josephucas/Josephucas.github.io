@@ -12,6 +12,10 @@ date: 2021-12-29 20:35:25
 
 <!-- more -->
 
+[TOC]
+
+
+
 ## hexo常用命令
 
 ```sh
@@ -530,6 +534,23 @@ npm install --save hexo-pdf
 
 这一步在国内有两种可行办法，一种是使用本地的文件，让hexo从博客中加载，一种就是放在云端的存储仓库进行加载。这里两种方法都做演示，但是推荐使用后者。
 
+另外需要在next的主题下面的config设置里面查找pdf，并且把pdf的功能打开
+
+如下所示：
+
+~~~json
+# PDF tag
+# NexT will try to load pdf files natively, if failed, pdf.js will be used.
+# So, you have to install the dependency of pdf.js if you want to use pdf tag and make it available to all browsers.
+# See: https://github.com/theme-next/theme-next-pdf
+pdf:
+  enable: true
+  # Default height
+  height: 500px
+~~~
+
+
+
 ### 本地文件
 
 1. 这个方法比较简单，但是效果较差，可能会造成较大的卡顿，首先在本地的根目录下打开`source`在这个文件夹下直接将你的pdf放进去即可。
@@ -560,3 +581,15 @@ hexo g
 ```
 
   到这里应该就已经全部结束了，但是在实际访问过程中，我发现我的一些下载插件经常会自动抓取到pdf并提示下载，遇到这种情况就可以通过白名单，或者是忽略解决。
+
+
+
+刚刚自己试了以下，刚开始和上面一样的话，宽度太窄了，现在用了下面的试了一下，感觉高度又太窄了
+
+最后发现需要调整height为877px，而不是单纯设置为100%
+
+```html
+<object data="https://cdn.jsdelivr.net/gh/Josephucas/Josephucas.github.io/pdf/中式英文书写错误习惯勘误.pdf" type="application/pdf" width="100%" height="877px">
+</object>
+```
+

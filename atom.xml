@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-02-01T02:18:32.258Z</updated>
+  <updated>2023-02-01T02:19:12.700Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2023/02/01/%E4%BD%A0%E5%A5%BD/"/>
     <id>http://example.com/2023/02/01/%E4%BD%A0%E5%A5%BD/</id>
     <published>2023-02-01T02:18:20.691Z</published>
-    <updated>2023-02-01T02:18:32.258Z</updated>
+    <updated>2023-02-01T02:19:12.700Z</updated>
     
     <content type="html"><![CDATA[<p align="right">副标题</p> <span id="more"></span>]]></content>
     
@@ -38,7 +38,7 @@
     <link href="http://example.com/2023/02/01/ns3%E5%AD%A6%E4%B9%A0%E8%BF%9B%E5%BA%A6/"/>
     <id>http://example.com/2023/02/01/ns3%E5%AD%A6%E4%B9%A0%E8%BF%9B%E5%BA%A6/</id>
     <published>2023-02-01T02:14:20.404Z</published>
-    <updated>2023-02-01T02:15:13.052Z</updated>
+    <updated>2023-02-01T02:19:12.697Z</updated>
     
     <content type="html"><![CDATA[<p align="right">副标题</p> <span id="more"></span>]]></content>
     
@@ -55,7 +55,7 @@
     <link href="http://example.com/2023/02/01/scaffolds/post/"/>
     <id>http://example.com/2023/02/01/scaffolds/post/</id>
     <published>2023-02-01T02:12:53.049Z</published>
-    <updated>2021-12-30T02:50:04.211Z</updated>
+    <updated>2023-02-01T02:19:12.710Z</updated>
     
     <content type="html"><![CDATA[<p align="right">副标题</p> <span id="more"></span>]]></content>
     
@@ -72,7 +72,7 @@
     <link href="http://example.com/2023/02/01/scaffolds/paper/"/>
     <id>http://example.com/2023/02/01/scaffolds/paper/</id>
     <published>2023-02-01T02:12:53.033Z</published>
-    <updated>2021-12-31T10:02:32.018Z</updated>
+    <updated>2023-02-01T02:19:12.709Z</updated>
     
     <content type="html"><![CDATA[<p align="right">副标题</p> <h2 id="摘要"><a class="markdownIt-Anchor" href="#摘要"></a> 摘要</h2><h2 id=""><a class="markdownIt-Anchor" href="#"></a> </h2><h2 id="关键词"><a class="markdownIt-Anchor" href="#关键词"></a> 关键词</h2><span id="more"></span><h2 id="研究问题"><a class="markdownIt-Anchor" href="#研究问题"></a> 研究问题</h2><h3 id="研究背景简要介绍"><a class="markdownIt-Anchor" href="#研究背景简要介绍"></a> 研究背景(简要介绍)</h3><h3 id="研究问题或解决技术问题描述需定位和描述清晰"><a class="markdownIt-Anchor" href="#研究问题或解决技术问题描述需定位和描述清晰"></a> 研究问题或解决技术问题描述（需定位和描述清晰）</h3><h2 id="研究现状"><a class="markdownIt-Anchor" href="#研究现状"></a> 研究现状</h2><h3 id="围绕研究问题进行相关研究成果列举注明参考文献"><a class="markdownIt-Anchor" href="#围绕研究问题进行相关研究成果列举注明参考文献"></a> 围绕研究问题，进行相关研究成果列举（注明参考文献）</h3><h3 id="研究现状总结及现有研究仍然存在不足或问题"><a class="markdownIt-Anchor" href="#研究现状总结及现有研究仍然存在不足或问题"></a> 研究现状总结，及现有研究仍然存在不足或问题</h3><h2 id="思路特色"><a class="markdownIt-Anchor" href="#思路特色"></a> 思路特色</h2><h3 id="与现有研究技术手段不同之处"><a class="markdownIt-Anchor" href="#与现有研究技术手段不同之处"></a> 与现有研究（技术手段）不同之处</h3><h2 id="关键问题技术点"><a class="markdownIt-Anchor" href="#关键问题技术点"></a> 关键问题/技术点</h2><h3 id="围绕研究题目提炼出需要解决的几个关键问题点技术点"><a class="markdownIt-Anchor" href="#围绕研究题目提炼出需要解决的几个关键问题点技术点"></a> 围绕研究题目，提炼出需要解决的几个关键问题点/技术点</h3><h2 id="解决方案"><a class="markdownIt-Anchor" href="#解决方案"></a> 解决方案</h2><h3 id="总体解决方案最好能画一个总体方案图-或有一段描述清楚总体思路"><a class="markdownIt-Anchor" href="#总体解决方案最好能画一个总体方案图-或有一段描述清楚总体思路"></a> 总体解决方案（最好能画一个总体方案图、或有一段描述清楚总体思路）</h3><h3 id="每个问题点技术点分别的解决方案或模型设计"><a class="markdownIt-Anchor" href="#每个问题点技术点分别的解决方案或模型设计"></a> 每个问题点/技术点分别的解决方案或模型设计</h3><h2 id="实验设计结果分析"><a class="markdownIt-Anchor" href="#实验设计结果分析"></a> 实验设计&amp;结果分析</h2><h3 id="场景选择-实验设计-指标选取"><a class="markdownIt-Anchor" href="#场景选择-实验设计-指标选取"></a> 场景选择、实验设计、指标选取</h3><h3 id="实验结果分析"><a class="markdownIt-Anchor" href="#实验结果分析"></a> 实验结果分析</h3><h2 id="论文结论"><a class="markdownIt-Anchor" href="#论文结论"></a> 论文结论</h2><h3 id="得出文章结论"><a class="markdownIt-Anchor" href="#得出文章结论"></a> 得出文章结论</h3>]]></content>
     
@@ -92,7 +92,7 @@
     <link href="http://example.com/2023/02/01/scaffolds/page/"/>
     <id>http://example.com/2023/02/01/scaffolds/page/</id>
     <published>2023-02-01T02:12:53.013Z</published>
-    <updated>2021-12-28T10:19:17.453Z</updated>
+    <updated>2023-02-01T02:19:12.707Z</updated>
     
     
     
@@ -105,7 +105,7 @@
     <link href="http://example.com/2023/02/01/scaffolds/draft/"/>
     <id>http://example.com/2023/02/01/scaffolds/draft/</id>
     <published>2023-02-01T02:12:52.993Z</published>
-    <updated>2021-12-28T10:19:17.453Z</updated>
+    <updated>2023-02-01T02:19:12.706Z</updated>
     
     
     
@@ -118,7 +118,7 @@
     <link href="http://example.com/2022/11/19/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E8%B0%83%E7%A0%94/"/>
     <id>http://example.com/2022/11/19/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E8%B0%83%E7%A0%94/</id>
     <published>2022-11-19T04:25:42.000Z</published>
-    <updated>2022-11-19T04:59:47.200Z</updated>
+    <updated>2023-02-01T02:19:12.705Z</updated>
     
     <content type="html"><![CDATA[<p align="right">对网络与安全方向进行调研和书籍推荐</p> <p>网络安全可以分为网络部分和安全部分</p><p>安全部分：包括密码学</p><p>网络部分：包括计算机网络</p><span id="more"></span>]]></content>
     
@@ -138,7 +138,7 @@
     <link href="http://example.com/2022/11/19/%E5%AF%86%E7%A0%81%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E2%80%94%E2%80%94%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5/"/>
     <id>http://example.com/2022/11/19/%E5%AF%86%E7%A0%81%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E2%80%94%E2%80%94%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5/</id>
     <published>2022-11-19T03:46:51.000Z</published>
-    <updated>2022-11-19T03:58:35.227Z</updated>
+    <updated>2023-02-01T02:19:12.703Z</updated>
     
     <content type="html"><![CDATA[<p align="right">记录密码编程学与网络安全——原理与实践大纲</p> <span id="more"></span>]]></content>
     
@@ -155,7 +155,7 @@
     <link href="http://example.com/2022/11/16/2022%E5%B9%B411%E6%9C%8818%E6%97%A5/"/>
     <id>http://example.com/2022/11/16/2022%E5%B9%B411%E6%9C%8818%E6%97%A5/</id>
     <published>2022-11-16T15:19:42.054Z</published>
-    <updated>2022-11-18T08:33:12.031Z</updated>
+    <updated>2023-02-01T02:19:12.693Z</updated>
     
     <content type="html"><![CDATA[<p>网络安全书籍推荐</p><p>清华大学<br>网络安全基础 应用与标准</p>]]></content>
     
@@ -178,7 +178,7 @@
     <link href="http://example.com/2022/11/09/%E7%A7%91%E7%A0%94%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
     <id>http://example.com/2022/11/09/%E7%A7%91%E7%A0%94%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/</id>
     <published>2022-11-09T15:00:58.000Z</published>
-    <updated>2022-11-19T02:23:01.024Z</updated>
+    <updated>2023-02-01T02:19:12.704Z</updated>
     
     <content type="html"><![CDATA[<p align="right">副标题</p> <span id="more"></span><p>文献综述 实用方法</p><p>1，Paper Digest<br>导师通知写一篇文献综述，想tou懒的同学可以用Paper Digest这个软件<br>打开网址，点击Literature review<br>选择你的研究领域<br>输入你研究的关键词<br>选择文献的年限<br>一般选择5年之内<br>点击搜索<br>系统帮你查找10篇左右符合条件的英文论文<br>并自动写成文献综述<br>ps：这个方法可用于临时小组汇报，不用用在真正的论文当中的❗❗❗</p><p>2，5款工具</p><p>Grammarly<br>免费插入word里，用来规避拼音的错误和语法的错误<br>Ginger<br>根据上下文语义环境监测句子中单词是否合适<br>Linggle<br>可以将普通的词汇替换成高级词汇<br>Checker<br>可以对论文，文章进行打分，单词语法不对的话可以提示<br>Ludwing<br>根据输入内容进行仿写，规范正确高级的句子。</p><h3 id="小蓝鲸"><a class="markdownIt-Anchor" href="#小蓝鲸"></a> 小蓝鲸</h3><p>这是<a href="https://www.xljsci.com/download/course.html">小蓝鲸</a></p>]]></content>
     
@@ -195,7 +195,7 @@
     <link href="http://example.com/2022/11/08/obsidian%E5%B7%A5%E4%BD%9C%E6%B5%81/"/>
     <id>http://example.com/2022/11/08/obsidian%E5%B7%A5%E4%BD%9C%E6%B5%81/</id>
     <published>2022-11-08T01:26:50.000Z</published>
-    <updated>2023-02-01T01:51:20.622Z</updated>
+    <updated>2023-02-01T02:19:12.699Z</updated>
     
     <content type="html"><![CDATA[<p align="right">副标题</p> <p>尝试搭建obsidian的各类场景的工作流</p><span id="more"></span><h2 id="obsidian各类使用技巧"><a class="markdownIt-Anchor" href="#obsidian各类使用技巧"></a> obsidian各类使用技巧</h2><h4 id="字体"><a class="markdownIt-Anchor" href="#字体"></a> 字体：</h4><p>没想好就用宋体+time new roman吧</p><h3 id="每日问题笔记工作流"><a class="markdownIt-Anchor" href="#每日问题笔记工作流"></a> 每日问题笔记工作流</h3><p>需要解决的问题包括：</p><h4 id="同步问题"><a class="markdownIt-Anchor" href="#同步问题"></a> 同步问题：</h4><p>打算直接用坚果云</p><h4 id="图床问题"><a class="markdownIt-Anchor" href="#图床问题"></a> 图床问题</h4><p>在原有的picgo的基础上选择插件Image auto upload Plugin<br>后面就按照typora+picgo的方式进行搭建</p><h4 id="导出"><a class="markdownIt-Anchor" href="#导出"></a> 导出</h4><p>如何导出到pdf或者word或者tex<br>使用插件pandoc</p><h4 id="快捷键"><a class="markdownIt-Anchor" href="#快捷键"></a> 快捷键</h4><h3 id="obsidian主题商店"><a class="markdownIt-Anchor" href="#obsidian主题商店"></a> obsidian主题商店</h3><p>我比较常用的是Blue Topaz感觉还挺漂亮的，<br>但是也可用mininal，然后再用一个style的插件，这样就可以设计自己想要的字体</p><h4 id="yin-and-yang"><a class="markdownIt-Anchor" href="#yin-and-yang"></a> Yin and Yang</h4><h3 id="obsidian模板设置"><a class="markdownIt-Anchor" href="#obsidian模板设置"></a> obsidian模板设置</h3><p>需要下载模板的插件templater<br>你需要先建立一个专门用来存放模板的模板文件夹，并且提前写好你所需要的模板 打开 设置 &gt; 插件选项 &gt; Templater 在 Template folder location 将路径指向模板文件夹 打开 Trigger Templater on new file creation 这个选项 然后在 Add New 那一栏，将文件夹与模板一一对应。如下图所示，左边是文件夹，右边是模板文件。<br>obsidian日记模板</p><h2 id="zotero-与-obsidian-配合提高阅读效率"><a class="markdownIt-Anchor" href="#zotero-与-obsidian-配合提高阅读效率"></a> <a href="https://www.bilibili.com/read/cv12137181">zotero 与 obsidian 配合提高阅读效率</a></h2><p>zotero安装“jasminum: 茉莉花插件。</p><p>提取文献内容到Obsidian</p><p>准备工作1：zotero安装插件</p><ul><li>ZotFile插件</li><li>Mdnotes for Zotero插件</li><li>Better BibTex for ZoteroI插件</li></ul><p>准备工作2：Obsidian安装插件<br>obsidian-citation-plugin插件，他的名字叫做citations</p><p>安装方法比较简单，先下载，然后常规安装，安装完成后需要进行一些设置，具体设置方法参考：</p><h3 id="day-planner插件"><a class="markdownIt-Anchor" href="#day-planner插件"></a> Day Planner插件</h3><h3 id="看板"><a class="markdownIt-Anchor" href="#看板"></a> 看板</h3><h3 id="思维导图插件"><a class="markdownIt-Anchor" href="#思维导图插件"></a> 思维导图插件</h3><p>需要下载mind map插件，然后弄好了之后直接ctrl+p 搜索mind map生成思维导图</p><h3 id="better-word-count"><a class="markdownIt-Anchor" href="#better-word-count"></a> <a href="https://link.zhihu.com/?target=https%3A//github.com/lukeleppan/better-word-count">Better Word Count</a></h3><ul><li>文字记数。</li></ul><p>参考<br><a href="https://sspai.com/post/72385">每日笔记、日程管理、工作复盘——这是我钻研出的 Obsidian 八般武艺</a></p>]]></content>
     
